@@ -1,9 +1,19 @@
 import './App.css';
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import RecipeContainer from './containers/RecipeContainer';
+import AppContainer from './containers/AppContainer';
+
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<AppContainer />}/>
+        <Route path='/recipe' element={<RecipeContainer />} />
+      </Routes>
+    </BrowserRouter>
+    
+   
   );
 }
 

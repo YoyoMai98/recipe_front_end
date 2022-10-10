@@ -1,0 +1,44 @@
+.add-new-recipe-form {
+    margin: 10px;
+}
+
+.add-new-recipe-form h3 {
+    margin-left: calc(25% - 10px);
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.add-new-recipe-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-new-recipe-form form label {
+    margin: 10px;
+    margin-left: calc(25% - 10px);
+}
+
+.add-new-recipe-form form input {
+    margin-left: calc(25% - 10px);
+    padding: 10px;
+    width: 50%;
+}
+
+#select {
+    margin-left: calc(25% - 10px);
+    width: 60%;
+}
+
+#submit-btn {
+    margin: 15px;
+    margin-left: calc(25% - 10px);
+    padding: 10px;
+    width: 25%;
+    font-size: 18px;
+    font-weight: 550;
+    color: #4d5f3e;
+    background-color: #EDDFB3;
+    border: 0.1px solid transparent;
+    border-radius: 4px;
+}

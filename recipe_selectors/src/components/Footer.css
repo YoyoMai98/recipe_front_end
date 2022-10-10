@@ -20,6 +20,10 @@
     box-shadow: 2px 2px #87805E;
 }
 
+.hidden {
+    display: none;
+}
+
 .footer_registration {
     background-color: #87805E;
     width: 100%;

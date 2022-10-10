@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CreatableSelect from "react-select/creatable";
+import "./AddNewRecipeForm.css"
 
 const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
 
@@ -47,10 +48,10 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
   };
 
   return (
-    <>
+    <div className="add-new-recipe-form">
       <h3>Add New Recipe</h3>
       <form>
-        <label htmlFor="name" />
+        <label htmlFor="name">Name</label>
         <input
           type="text"
           name="name"
@@ -58,7 +59,7 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
           onChange={handleChange}
         />
 
-        <label htmlFor="time" />
+        <label htmlFor="time">Time</label>
         <input
           type="number"
           name="time"
@@ -66,7 +67,7 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
           onChange={handleChange}
         />
 
-        <label htmlFor="calories" />
+        <label htmlFor="calories">Calories</label>
         <input
           type="number"
           name="calories"
@@ -74,14 +75,14 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
           onChange={handleChange}
         />
 
-        <label htmlFor="servings" />
+        <label htmlFor="servings">Servings</label>
         <input
           type="number"
           name="servings"
           value={newRecipe.servings}
           onChange={handleChange}
         />
-
+        <label htmlFor="ingredients">Choose ingredients</label>
         <CreatableSelect
           options={selection}
           isMulti
@@ -89,11 +90,12 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
           inputValue={inputValue}
           value={selectedValues.selected}
           controlShouldRenderValue={true}
+          id="select"
         />
 
-        <button type="submit">Add new recipe</button>
+        <button type="submit" id="submit-btn">Add new recipe</button>
       </form>
-    </>
+    </div>
   );
 };
 export default AddNewRecipeForm;

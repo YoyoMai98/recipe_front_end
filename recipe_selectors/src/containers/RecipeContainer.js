@@ -11,6 +11,7 @@ const RecipeContainer = () => {
 
     const [recipes, setRecipes] = useState([])
     const [ingredients, setIngredients] = useState([])
+    const [clicked, setClicked] = useState(false)
 
     const fetchRecipes = async () => {
         const response = await fetch("http://localhost:8080/recipe");
@@ -38,6 +39,10 @@ const RecipeContainer = () => {
         return imageData.results[1].urls.regular
     }
 
+    const onClick = () => {
+        setClicked(true)
+    }
+
     useEffect(() => {
         fetchRecipes()
         fetchIngredients()
@@ -48,7 +53,15 @@ const RecipeContainer = () => {
         <Header/>
         <RecipeList recipes={recipes}/>
         <IngredientsList ingredients={ingredients}/>
-        <AddNewRecipeForm ingredients={ingredients}/>
+        <div className={clicked ? "hidden" : "footer_add_recipe"}>
+            <h2>Feeling creative to share your recipe?</h2>
+                {/* <Link to='/addnewrecipe'> */}
+            <button onClick={onClick}>Add new recipe</button>
+                {/* </Link> */}
+        </div>
+        {clicked? (
+            <AddNewRecipeForm ingredients={ingredients}/>
+        ) : <p className="hidden"></p>}
         <Footer/>
        
         </>

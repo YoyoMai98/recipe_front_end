@@ -4,7 +4,11 @@ import CreatableSelect from "react-select/creatable";
 const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
   const statusOptions = ingredients ? ingredients.map (ingredient => {
     return {value: ingredient.name,label: ingredient.name}
-  }):[]
+  }):[];
+  // const statusOptions = ingredients.map (ingredient => {
+  //   console.log(ingredient);
+  //   return {value: ingredient.name,label: ingredient.name}
+  // });
 
   const [newRecipe, setNewRecipe] = useState({
     name: "",
@@ -84,7 +88,7 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
           onChange={handleChange}
         />
 
-        <CreatableSelect
+        {/* <CreatableSelect
           options={selection}
           isMulti
           onChange={handleOnChange}
@@ -92,7 +96,12 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
           inputValue={inputValue}
           value={selectedValues.selected}
           controlShouldRenderValue={true}
-        />
+        /> */}
+
+        data:
+        {JSON.stringify(statusOptions)}
+
+        
       </form>
     </>
   );

@@ -9,7 +9,7 @@ const Footer = () =>{
         <footer>
             <div className="footer_add_recipe">
                 <h2>Feeling creative to share your recipe?</h2>
-                <Link to='addnewrecipe'>
+                <Link to='/addnewrecipe'>
                     <button>Add new recipe</button>
                 </Link>
             </div>

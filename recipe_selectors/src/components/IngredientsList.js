@@ -12,6 +12,7 @@ const IngredientsList = ({ingredients}) => {
     return (
         <>
         {ingredientsComponents}
+        {/* ingredient :{ingredients} */}
         </>
     ) 
 }

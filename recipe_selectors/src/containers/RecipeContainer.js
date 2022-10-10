@@ -20,14 +20,12 @@ const RecipeContainer = () => {
         const response = await fetch("http://localhost:8080/ingredients");
         const ingredientsData = await response.json();
         setIngredients(ingredientsData);
+       // console.log('ingredients: ', ingredientsData);
     }
 
     useEffect(() => {
-        fetchRecipes()
-        fetchIngredients()
-
-
-    
+        fetchRecipes();
+        fetchIngredients();
     },[])
 
     return (

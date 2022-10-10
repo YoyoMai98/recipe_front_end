@@ -1,14 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CreatableSelect from "react-select/creatable";
 
 const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
+
   const statusOptions = ingredients ? ingredients.map (ingredient => {
     return {value: ingredient.name,label: ingredient.name}
-  }):[];
-  // const statusOptions = ingredients.map (ingredient => {
-  //   console.log(ingredient);
-  //   return {value: ingredient.name,label: ingredient.name}
-  // });
+  }):[]
+
 
   const [newRecipe, setNewRecipe] = useState({
     name: "",
@@ -29,7 +27,13 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
 
   const [inputValue, setInputValue] = useState("");
   const [selectedValues, setselectedValues] = useState({ selected: [] });
-  const [selection, setSelection] = useState(statusOptions);
+  const [selection, setSelection] = useState([]);
+
+  useEffect(() => {
+    if(selection.length < 1) {
+      setSelection(() => statusOptions)
+    }
+  }, [statusOptions])
 
   const handleChange = (event) => {
     const propertyName = event.target.name;
@@ -38,18 +42,8 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
     setNewRecipe(addedRecipe);
   };
 
-  const handleInputChange = (value) => {
-    setInputValue(value);
-  };
-
-  const handleOnChange = () => {
-    const newOption = { label: inputValue, inputValue };
-
-    inputValue !== "" && setSelection([...selection, newOption]);
-
-    setInputValue("");
-
-    setselectedValues(selection);
+  const handleOnChange = (values) => {
+    setselectedValues(values);
   };
 
   return (
@@ -88,20 +82,16 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
           onChange={handleChange}
         />
 
-        {/* <CreatableSelect
+        <CreatableSelect
           options={selection}
           isMulti
           onChange={handleOnChange}
-          onInputChange={handleInputChange}
           inputValue={inputValue}
           value={selectedValues.selected}
           controlShouldRenderValue={true}
-        /> */}
+        />
 
-        data:
-        {JSON.stringify(statusOptions)}
-
-        
+        <button type="submit">Add new recipe</button>
       </form>
     </>
   );

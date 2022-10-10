@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import RecipeList from "../components/RecipeList";
 
 const RecipeContainer = () => {
 
@@ -30,6 +31,7 @@ const RecipeContainer = () => {
     return (
         <>
         <Header/>
+        <RecipeList recipes={recipes}/>
         <Footer/>
        
         </>

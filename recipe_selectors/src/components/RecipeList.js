@@ -1,12 +1,15 @@
-const RecipeList = ({recipes, addRecipe, selectRecipe, deleteRecipe}) => {
+import Recipe from "./Recipe"
+
+const RecipeList = ({recipes}) => {
 
     const recipeComponents = recipes.map(recipe => {
         return <Recipe
                 key={recipe.id}
                 recipe={recipe}
-                addRecipe={addRecipe}
-                selectRecipe={selectRecipe}
-                deleteRecipe={deleteRecipe}/>
+                // addRecipe={addRecipe}
+                // selectRecipe={selectRecipe}
+                // deleteRecipe={deleteRecipe}
+                />
     })
     return (
         <>

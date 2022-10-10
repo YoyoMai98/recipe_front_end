@@ -1,0 +1,27 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D8CCA3;
+    width: 100%;
+}
+
+#header_left {
+    margin: 10px;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.header_right {
+    margin: 10px;
+    font-size: 25px;
+    font-weight: 550;
+}
+
+header a {
+    color: #5a653d;
+}
+
+#header_right_recipe {
+    margin-right: 10px;
+}

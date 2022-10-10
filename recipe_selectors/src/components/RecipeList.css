@@ -1,0 +1,8 @@
+.recipe_list {
+    margin: 10px;
+}
+
+.recipe_list_component {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

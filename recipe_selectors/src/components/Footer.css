@@ -1,0 +1,62 @@
+.footer_add_recipe {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: #B09B71;
+}
+
+.footer_add_recipe button {
+    font-size: 18px;
+    padding: 8px;
+    background-color: #EDDFB3;
+    border-radius: 4px;
+    border: 0.1px solid transparent;
+    font-weight: 550;
+    color: #4d5f3e;
+}
+
+.footer_add_recipe button:hover {
+    box-shadow: 2px 2px #87805E;
+}
+
+.footer_registration {
+    background-color: #87805E;
+    width: 100%;
+}
+
+.registration_form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.name_form {
+    font-size: 18px;
+}
+
+.name_form label {
+    color: #EDDFB3;
+    font-weight: 550;
+}
+
+#name {
+    margin-left: 10px;
+    padding: 5px;
+    width: 300px;
+}
+
+#registrationButton {
+    font-size: 18px;
+    padding: 9px;
+    background-color: #EDDFB3;
+    border-radius: 4px;
+    border: 0.1px solid transparent;
+    font-weight: 550;
+    color: #4d5f3e;
+}
+
+#registrationButton:hover {
+    box-shadow: 2px 2px #c7bd88;
+}

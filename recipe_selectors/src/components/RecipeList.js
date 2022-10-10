@@ -1,4 +1,5 @@
 import Recipe from "./Recipe"
+import "./RecipeList.css"
 
 const RecipeList = ({recipes}) => {
 
@@ -12,11 +13,13 @@ const RecipeList = ({recipes}) => {
                 />
     })
     return (
-        <>
+        <div className="recipe_list">
             <h2>List of Recipes</h2>
             <hr />
-            {recipeComponents}
-        </>
+            <div className="recipe_list_component">
+                {recipeComponents}
+            </div>
+        </div>
     )
 }
 export default RecipeList;

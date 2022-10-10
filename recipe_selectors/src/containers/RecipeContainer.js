@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import RecipeList from "../components/RecipeList";
+import IngredientsList from "../components/IngredientsList";
 
 const RecipeContainer = () => {
 
@@ -32,6 +33,7 @@ const RecipeContainer = () => {
         <>
         <Header/>
         <RecipeList recipes={recipes}/>
+        <IngredientsList ingredients={ingredients}/>
         <Footer/>
        
         </>

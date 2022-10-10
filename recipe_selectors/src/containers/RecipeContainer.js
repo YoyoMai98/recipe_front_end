@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import RecipeList from "../components/RecipeList";
 import IngredientsList from "../components/IngredientsList";
+import AddNewRecipeForm from "../components/AddNewRecipeForm";
 
 const RecipeContainer = () => {
 
@@ -34,6 +35,7 @@ const RecipeContainer = () => {
         <Header/>
         <RecipeList recipes={recipes}/>
         <IngredientsList ingredients={ingredients}/>
+        <AddNewRecipeForm ingredients={ingredients}/>
         <Footer/>
        
         </>

@@ -1,4 +1,5 @@
 import "./Footer.css"
+import {Link} from 'react-router-dom'
 
 const Footer = () =>{
 
@@ -8,7 +9,9 @@ const Footer = () =>{
         <footer>
             <div className="footer_add_recipe">
                 <h2>Feeling creative to share your recipe?</h2>
-                <button>Add new recipe</button>
+                <Link to='addnewrecipe'>
+                    <button>Add new recipe</button>
+                </Link>
             </div>
             <div className="footer_registration">
                 <form className="registration_form">

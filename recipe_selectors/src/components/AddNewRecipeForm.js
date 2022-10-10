@@ -1,75 +1,100 @@
-import {useState} from "react";
-import RecipeList from "./RecipeList";
-import IngredientsList from "./IngredientsList";
+import { useState } from "react";
+import CreatableSelect from "react-select/creatable";
 
-const AddNewRecipeForm = ({addNewRecipe, ingredients}) => {
+const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
+  const statusOptions = ingredients ? ingredients.map (ingredient => {
+    return {value: ingredient.name,label: ingredient.name}
+  }):[]
 
-    const [newRecipe, setNewRecipe] = useState({
-        name:"",
-        averageRating:0,
-        time:0,
-        calories:0,
-        servings:0,
-        ingredients:[]
-    });
+  const [newRecipe, setNewRecipe] = useState({
+    name: "",
+    averageRating: 0,
+    time: 0,
+    calories: 0,
+    servings: 0,
+    ingredients: [],
+  });
 
-    const [newIngredient, setNewIngredient] = useState({
-        name:"",
-        isGlutenFree:false,
-        isVegan:false,
-        isVegetarian:false,
-        allergensContained:"NONE",
-    })
+  const [newIngredient, setNewIngredient] = useState({
+    name: "",
+    isGlutenFree: false,
+    isVegan: false,
+    isVegetarian: false,
+    allergensContained: "NONE",
+  });
 
-    const handleChange = event => {
-        const propertyName = event.target.name
-        const addedRecipe = {...newRecipe}
-        addedRecipe[propertyName] = event.target.value
-        setNewRecipe(addedRecipe);
-    }
+  const [inputValue, setInputValue] = useState("");
+  const [selectedValues, setselectedValues] = useState({ selected: [] });
+  const [selection, setSelection] = useState(statusOptions);
 
-    return (
-        <>
-        <h3>Add New Recipe</h3>
-        <form>
-            <label htmlFor="name"/>
-            <input 
-            type="text"
-            name="name"
-            value={newRecipe.name}
-            onChange={handleChange}
-            />
+  const handleChange = (event) => {
+    const propertyName = event.target.name;
+    const addedRecipe = { ...newRecipe };
+    addedRecipe[propertyName] = event.target.value;
+    setNewRecipe(addedRecipe);
+  };
 
-            <label htmlFor="time"/>
-            <input 
-            type="number"
-            name="time"
-            value={newRecipe.time}
-            onChange={handleChange}
-            />
+  const handleInputChange = (value) => {
+    setInputValue(value);
+  };
 
-            <label htmlFor="calories"/>
-            <input 
-            type="number"
-            name="calories"
-            value={newRecipe.calories}
-            onChange={handleChange}
-            />
+  const handleOnChange = () => {
+    const newOption = { label: inputValue, inputValue };
 
-            <label htmlFor="servings" />
-            <input 
-            type="number"
-            name="servings"
-            value={newRecipe.servings}
-            onChange={handleChange}
-            />
+    inputValue !== "" && setSelection([...selection, newOption]);
 
-            <IngredientsList/>
+    setInputValue("");
 
-        </form>
-        
-        </>
-    )
+    setselectedValues(selection);
+  };
 
-}
+  return (
+    <>
+      <h3>Add New Recipe</h3>
+      <form>
+        <label htmlFor="name" />
+        <input
+          type="text"
+          name="name"
+          value={newRecipe.name}
+          onChange={handleChange}
+        />
 
+        <label htmlFor="time" />
+        <input
+          type="number"
+          name="time"
+          value={newRecipe.time}
+          onChange={handleChange}
+        />
+
+        <label htmlFor="calories" />
+        <input
+          type="number"
+          name="calories"
+          value={newRecipe.calories}
+          onChange={handleChange}
+        />
+
+        <label htmlFor="servings" />
+        <input
+          type="number"
+          name="servings"
+          value={newRecipe.servings}
+          onChange={handleChange}
+        />
+
+        <CreatableSelect
+          options={selection}
+          isMulti
+          onChange={handleOnChange}
+          onInputChange={handleInputChange}
+          inputValue={inputValue}
+          value={selectedValues.selected}
+          controlShouldRenderValue={true}
+        />
+      </form>
+    </>
+  );
+};
+export default AddNewRecipeForm;

@@ -2,6 +2,7 @@ import './App.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import RecipeContainer from './containers/RecipeContainer';
 import AppContainer from './containers/AppContainer';
+import UserContainer from './containers/UserContainer'
 
 
 function App() {
@@ -9,11 +10,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<AppContainer />}/>
-        <Route path='/recipe' element={<RecipeContainer />} />
+        <Route path='/recipes' element={<RecipeContainer />} />
+        <Route path='/account' element={<UserContainer />} />
       </Routes>
     </BrowserRouter>
     
-   
   );
 }
 

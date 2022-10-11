@@ -48,6 +48,20 @@ const RecipeContainer = () => {
         fetchIngredients()
     },[])
 
+    const addNewRecipe = async (newRecipe) => {
+        const response = await fetch("http://localhost:8080/recipe/create", {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(newRecipe)
+        })
+        console.log("POST")
+        console.log(newRecipe)
+        console.log("---")
+        const savedRecipe =  await response.json()
+        console.log(savedRecipe)
+        setRecipes([...recipes, savedRecipe])
+    }
+
     return (
         <>
         <Header/>
@@ -55,12 +69,10 @@ const RecipeContainer = () => {
         <IngredientsList ingredients={ingredients}/>
         <div className={clicked ? "hidden" : "footer_add_recipe"}>
             <h2>Feeling creative to share your recipe?</h2>
-                {/* <Link to='/addnewrecipe'> */}
             <button onClick={onClick}>Add new recipe</button>
-                {/* </Link> */}
         </div>
         {clicked? (
-            <AddNewRecipeForm ingredients={ingredients}/>
+            <AddNewRecipeForm ingredients={ingredients} addNewRecipe={addNewRecipe}/>
         ) : <p className="hidden"></p>}
         <Footer/>
        

@@ -26,9 +26,9 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
     allergensContained: "NONE",
   });
 
-  const [inputValue, setInputValue] = useState("");
   const [selectedValues, setselectedValues] = useState({ selected: [] });
   const [selection, setSelection] = useState([]);
+  // const [selectedIngredients, setSelectedIngredients] = useState([]);
 
   useEffect(() => {
     if(selection.length < 1) {
@@ -39,7 +39,7 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
   const handleChange = (event) => {
     const propertyName = event.target.name;
     const addedRecipe = { ...newRecipe };
-    addedRecipe[propertyName] = event.target.value;
+    addedRecipe[propertyName] = propertyName === "name" ? event.target.value : parseInt(event.target.value);
     setNewRecipe(addedRecipe);
   };
 
@@ -47,10 +47,28 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
     setselectedValues(values);
   };
 
+  const handleFormSubmit = (event) => {
+    event.preventDefault()
+    storeIngredients()
+    addNewRecipe(newRecipe)
+  }
+
+  const storeIngredients = () => {
+    // const selectedIngredientsValue = selectedValues.map(selectedValue => selectedValue.value)
+    // let selectedIngredients = []
+    // for(let selectedIngredientValue of selectedIngredientsValue){
+    //   const selectedIngredient = ingredients.find(ingredient => ingredient.name.includes(selectedIngredientValue))
+    //   selectedIngredients.push(selectedIngredient)
+    // }
+    // newRecipe.ingredients = selectedIngredients
+    newRecipe.ingredients = []
+    setNewRecipe(newRecipe)
+  }
+
   return (
     <div className="add-new-recipe-form">
       <h3>Add New Recipe</h3>
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <label htmlFor="name">Name</label>
         <input
           type="text"
@@ -63,6 +81,7 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
         <input
           type="number"
           name="time"
+          min="1"
           value={newRecipe.time}
           onChange={handleChange}
         />
@@ -71,6 +90,7 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
         <input
           type="number"
           name="calories"
+          min="1"
           value={newRecipe.calories}
           onChange={handleChange}
         />
@@ -79,6 +99,7 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
         <input
           type="number"
           name="servings"
+          min="1"
           value={newRecipe.servings}
           onChange={handleChange}
         />
@@ -87,7 +108,6 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
           options={selection}
           isMulti
           onChange={handleOnChange}
-          inputValue={inputValue}
           value={selectedValues.selected}
           controlShouldRenderValue={true}
           id="select"

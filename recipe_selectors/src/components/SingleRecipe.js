@@ -36,7 +36,7 @@ const SingleRecipe = () => {
             <img src={recipe.img} alt={recipe.name} />
             <div className="information">
                 <h3>{recipe.name}</h3>
-                <h4>Average rating: {recipe.avergeRating}</h4>
+                <h4>Average rating: {recipe.averageRating}</h4>
                 <h4>Ingredients</h4>
                 <ul>
                     {recipe.ingredients.map((ingredient, index) => {

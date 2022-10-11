@@ -6,3 +6,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
+.recipe_list a {
+    color: black;
+}

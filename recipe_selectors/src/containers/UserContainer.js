@@ -1,6 +1,4 @@
-import Header from "../components/Header"
 import User from "../components/User"
-import Footer from "../components/Footer"
 import { useEffect, useState } from "react"
 
 const UserContainer = () => {
@@ -10,13 +8,8 @@ const UserContainer = () => {
     const fetchUsers = async () => {
         const response = await fetch("http://localhost:8080/users");
         const userData = await response.json();
-        console.log("userData");
-        console.log(userData);
         setUsers(userData);
     }
-
-    console.log("fetchUsers");
-    console.log(users);
 
     useEffect(() => {
         fetchUsers()
@@ -24,9 +17,7 @@ const UserContainer = () => {
 
     return(
         <>
-        <Header/>
         <User user={users[0]}/>
-        <Footer/>
         </>
     )
 }

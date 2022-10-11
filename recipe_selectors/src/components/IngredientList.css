@@ -1,0 +1,8 @@
+.ingredient_list {
+    margin: 10px;
+}
+
+.ingredient_list_component {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

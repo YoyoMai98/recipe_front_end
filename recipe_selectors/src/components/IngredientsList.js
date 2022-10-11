@@ -1,4 +1,6 @@
 import Ingredient from "./Ingredient"
+import "./IngredientList.css"
+
 
 const IngredientsList = ({ingredients}) => {
 
@@ -11,7 +13,9 @@ const IngredientsList = ({ingredients}) => {
 
     return (
         <>
-        {ingredientsComponents}
+        <div className="ingredient_list_component">
+            {ingredientsComponents}
+        </div>
         {/* ingredient :{ingredients} */}
         </>
     ) 

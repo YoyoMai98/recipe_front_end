@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import RecipeList from "../components/RecipeList";
 import IngredientsList from "../components/IngredientsList";
 import AddNewRecipeForm from "../components/AddNewRecipeForm";
+import Search from "../components/Search";
+
 
 const access_key = "mEi0nGTNsKAjv7GHdhxfSw_aZfkwEES1J1I-NApn6OY"
 
@@ -12,6 +14,7 @@ const RecipeContainer = () => {
     const [recipes, setRecipes] = useState([])
     const [ingredients, setIngredients] = useState([])
     const [clicked, setClicked] = useState(false)
+    const [filteredRecipes, setFilteredRecipes] = useState([])
 
     const fetchRecipes = async () => {
         const response = await fetch("http://localhost:8080/recipe");
@@ -54,18 +57,24 @@ const RecipeContainer = () => {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newRecipe)
         })
-        console.log("POST")
-        console.log(newRecipe)
-        console.log("---")
         const savedRecipe =  await response.json()
-        console.log(savedRecipe)
         setRecipes([...recipes, savedRecipe])
+    }
+    const filterRecipe = (searchTerm) => {
+        const filtered = recipes.filter (recipe =>{
+            return recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
+        })
+        setFilteredRecipes(filtered)
+        if (searchTerm === "") setFilteredRecipes([])
+
+
     }
 
     return (
         <>
         <Header/>
-        <RecipeList recipes={recipes}/>
+        <Search filterRecipe={filterRecipe}/>
+        <RecipeList recipes={filteredRecipes.length > 0 ? filteredRecipes : recipes}/>
         <IngredientsList ingredients={ingredients}/>
         <div className={clicked ? "hidden" : "footer_add_recipe"}>
             <h2>Feeling creative to share your recipe?</h2>

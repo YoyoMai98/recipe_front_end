@@ -8,19 +8,19 @@ const UserContainer = () => {
     const [users, setUsers] = useState([])
 
     const fetchUsers = async () => {
-        const response = await fetch("http:localhost:8080/users");
+        const response = await fetch("http://localhost:8080/users");
         const userData = await response.json();
         console.log("userData");
         console.log(userData);
         setUsers(userData);
     }
 
+    console.log("fetchUsers");
+    console.log(users);
+
     useEffect(() => {
         fetchUsers()
-        console.log("fetchUsers");
-        console.log(users);
-
-    },[users])
+    },[])
 
     return(
         <>

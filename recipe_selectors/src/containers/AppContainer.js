@@ -7,8 +7,8 @@ const AppContainer = () => {
 
     return (
         <>
-        <Header/>
-        <Footer/>
+        {/* <Header/>
+        <Footer/> */}
         </>
     )
 }

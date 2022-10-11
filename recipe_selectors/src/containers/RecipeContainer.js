@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import RecipeList from "../components/RecipeList";
 import IngredientsList from "../components/IngredientsList";
 import AddNewRecipeForm from "../components/AddNewRecipeForm";
@@ -72,7 +70,6 @@ const RecipeContainer = () => {
 
     return (
         <>
-        <Header/>
         <Search filterRecipe={filterRecipe}/>
         <RecipeList recipes={filteredRecipes.length > 0 ? filteredRecipes : recipes}/>
         <IngredientsList ingredients={ingredients}/>
@@ -83,7 +80,6 @@ const RecipeContainer = () => {
         {clicked? (
             <AddNewRecipeForm ingredients={ingredients} addNewRecipe={addNewRecipe}/>
         ) : <p className="hidden"></p>}
-        <Footer/>
        
         </>
 

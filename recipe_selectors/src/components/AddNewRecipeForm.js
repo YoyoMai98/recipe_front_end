@@ -54,14 +54,13 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
   }
 
   const storeIngredients = () => {
-    // const selectedIngredientsValue = selectedValues.map(selectedValue => selectedValue.value)
-    // let selectedIngredients = []
-    // for(let selectedIngredientValue of selectedIngredientsValue){
-    //   const selectedIngredient = ingredients.find(ingredient => ingredient.name.includes(selectedIngredientValue))
-    //   selectedIngredients.push(selectedIngredient)
-    // }
-    // newRecipe.ingredients = selectedIngredients
-    newRecipe.ingredients = []
+    const selectedIngredientsValue = selectedValues.map(selectedValue => selectedValue.value)
+    let selectedIngredients = []
+    for(let selectedIngredientValue of selectedIngredientsValue){
+      const selectedIngredient = ingredients.find(ingredient => ingredient.name.includes(selectedIngredientValue))
+      selectedIngredients.push(selectedIngredient)
+    }
+    newRecipe.ingredients = selectedIngredients
     setNewRecipe(newRecipe)
   }
 

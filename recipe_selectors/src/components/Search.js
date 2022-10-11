@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Search = ({filterRecipe}) => {
+    const navigate = useNavigate()
     const [searchTerm, setSearchTerm] = useState("");
     
     const handleChange = event => {
@@ -10,13 +12,14 @@ const Search = ({filterRecipe}) => {
     const handleSubmit = event => {
         event.preventDefault()
         filterRecipe(searchTerm)
+        navigate("/recipes")
     }
 
     return (
         <form className="search" role="search" onSubmit={handleSubmit}>
             <input
             type="search"
-            placeholder="Search Recipes"
+            placeholder="Find a Recipe"
             id="search_input"
             value={searchTerm}
             onChange={handleChange}

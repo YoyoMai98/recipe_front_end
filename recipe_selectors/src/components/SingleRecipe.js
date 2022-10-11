@@ -40,7 +40,6 @@ const SingleRecipe = () => {
                 <h4>Ingredients</h4>
                 <ul>
                     {recipe.ingredients.map((ingredient, index) => {
-                        console.log(recipe);
                         return <li key={index}>{ingredient.name}</li>
                     })}
                 </ul>

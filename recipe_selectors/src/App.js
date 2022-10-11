@@ -13,6 +13,7 @@ function App() {
   const access_key = "mEi0nGTNsKAjv7GHdhxfSw_aZfkwEES1J1I-NApn6OY"
 
   const [recipes, setRecipes] = useState([])
+  const [filteredRecipes, setFilteredRecipes] = useState([])
  
   const fetchRecipes = async () => {
       const response = await fetch("http://localhost:8080/recipe");
@@ -37,13 +38,21 @@ function App() {
     fetchRecipes()
   },[]) 
 
+  const filterRecipe = (searchTerm) => {
+        const filtered = recipes.filter (recipe =>{
+            return recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
+        })
+        setFilteredRecipes(filtered)
+        if (searchTerm === "") setFilteredRecipes([])
+    }
+
   return (
     <>
     <BrowserRouter>
     <Header />
       <Routes>
-        <Route path='/' element={<AppContainer recipes={recipes}/>}/>
-        <Route path='/recipes' element={<RecipeContainer recipes={recipes} setRecipes={setRecipes}/>} />
+        <Route path='/' element={<AppContainer recipes={recipes} filterRecipe={filterRecipe} />}/>
+        <Route path='/recipes' element={<RecipeContainer recipes={recipes} setRecipes={setRecipes} filterRecipe={filterRecipe} filteredRecipes={filteredRecipes}/>} />
         <Route path='/addnewrecipe' element={<AddNewRecipeForm/>} />
         <Route path='/account' element={<UserContainer />} />
         <Route path="/recipes/:recipeId" element={<SingleRecipe />} />

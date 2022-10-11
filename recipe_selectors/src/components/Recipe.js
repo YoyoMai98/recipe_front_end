@@ -6,8 +6,8 @@ const Recipe = ({recipe}) => {
             <div className="recipe">
                 <Link to={`/recipes/${recipe.id}`}>
                     <h3>{recipe.name}</h3>
+                    <img src={recipe.img} alt={recipe.name} />
                 </Link>
-                <img src={recipe.img} alt={recipe.name} />
             </div>
     )
 }

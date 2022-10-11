@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+import Search from "../components/Search";
 import "./AppContainer.css";
 
-const AppContainer = ({recipes}) => {
+const AppContainer = ({recipes, filterRecipe}) => {
 
     const recipeHero = recipes.filter(recipe => recipe.averageRating > 4);
 
@@ -10,6 +11,8 @@ const AppContainer = ({recipes}) => {
     const rightRecipes = recipeHero.filter((recipe, index) => index !== 1 && index !== recipeHero.length-1)
 
     return (
+        <>
+        <Search filterRecipe={filterRecipe}/>
         <div className="home">
             {recipes.length >= 1 ? 
             <>
@@ -21,8 +24,8 @@ const AppContainer = ({recipes}) => {
                 <div className="recipe-hero right_sider_recipes">
                     {rightRecipes.map (recipe => {
                     return(
-                        <Link to={`/recipes/${recipe.id}`}>
-                        <div className="recipe-hero" key={recipe.id}>
+                        <Link to={`/recipes/${recipe.id}`} key={recipe.id}>
+                        <div className="recipe-hero">
                             <img src={recipe.img} alt={recipe.name} />
                             <h4>{recipe.name}</h4>
                         </div>
@@ -34,6 +37,7 @@ const AppContainer = ({recipes}) => {
             </>
            : <div></div> }
         </div>
+        </>
     )
 }
 

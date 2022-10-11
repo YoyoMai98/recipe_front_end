@@ -7,12 +7,10 @@ import Search from "../components/Search";
 
 const access_key = "mEi0nGTNsKAjv7GHdhxfSw_aZfkwEES1J1I-NApn6OY"
 
-const RecipeContainer = () => {
+const RecipeContainer = ({recipes, setRecipes, filterRecipe, filteredRecipes}) => {
 
-    const [recipes, setRecipes] = useState([])
     const [ingredients, setIngredients] = useState([])
     const [clicked, setClicked] = useState(false)
-    const [filteredRecipes, setFilteredRecipes] = useState([])
 
     const fetchRecipes = async () => {
         const response = await fetch("http://localhost:8080/recipe");
@@ -64,21 +62,11 @@ const RecipeContainer = () => {
         setRecipes([...recipes, savedRecipe])
     }
 
-    const filterRecipe = (searchTerm) => {
-        const filtered = recipes.filter (recipe =>{
-            return recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
-        })
-        setFilteredRecipes(filtered)
-        if (searchTerm === "") setFilteredRecipes([])
-
-
-    }
-
     return (
         <>
         <Search filterRecipe={filterRecipe}/>
         <RecipeList recipes={filteredRecipes.length > 0 ? filteredRecipes : recipes}/>
-        <IngredientsList ingredients={ingredients}/>
+        {/* <IngredientsList ingredients={ingredients}/> */}
         <div className={clicked ? "hidden" : "footer_add_recipe"}>
             <h2>Feeling creative to share your recipe?</h2>
             <button onClick={onClick}>Add new recipe</button>

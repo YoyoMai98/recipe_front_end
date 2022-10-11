@@ -49,8 +49,13 @@ const RecipeContainer = () => {
         fetchIngredients()
     },[])
 
-    const addNewRecipe = async (newRecipe) => {
-        const response = await fetch("http://localhost:8080/recipe/create", {
+    const addNewRecipe = async (newRecipe, ingredientIds) => {
+        let params = ""
+        for(let i = 0; i < ingredientIds.length; i++){
+            if(i === 0) params = "ingredientsId=" + ingredientIds[i]
+            else params += "&ingredientsId=" + ingredientIds[i]
+        }
+        const response = await fetch("http://localhost:8080/recipe?"+params, {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newRecipe)
@@ -58,6 +63,7 @@ const RecipeContainer = () => {
         const savedRecipe =  await response.json()
         setRecipes([...recipes, savedRecipe])
     }
+
     const filterRecipe = (searchTerm) => {
         const filtered = recipes.filter (recipe =>{
             return recipe.name.toLowerCase().includes(searchTerm.toLowerCase())

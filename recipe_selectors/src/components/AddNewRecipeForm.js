@@ -49,19 +49,23 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
-    storeIngredients()
-    addNewRecipe(newRecipe)
+    const ingredientIds = storeIngredients()
+    addNewRecipe(newRecipe, ingredientIds)
+    window.location.reload(); 
   }
 
   const storeIngredients = () => {
     const selectedIngredientsValue = selectedValues.map(selectedValue => selectedValue.value)
     let selectedIngredients = []
+    let ingredientIds = []
     for(let selectedIngredientValue of selectedIngredientsValue){
       const selectedIngredient = ingredients.find(ingredient => ingredient.name.includes(selectedIngredientValue))
+      ingredientIds.push(selectedIngredient.id)
       selectedIngredients.push(selectedIngredient)
     }
     newRecipe.ingredients = selectedIngredients
     setNewRecipe(newRecipe)
+    return ingredientIds
   }
 
   return (
@@ -80,7 +84,6 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
         <input
           type="number"
           name="time"
-          min="1"
           value={newRecipe.time}
           onChange={handleChange}
         />
@@ -89,7 +92,6 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
         <input
           type="number"
           name="calories"
-          min="1"
           value={newRecipe.calories}
           onChange={handleChange}
         />
@@ -98,7 +100,6 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
         <input
           type="number"
           name="servings"
-          min="1"
           value={newRecipe.servings}
           onChange={handleChange}
         />

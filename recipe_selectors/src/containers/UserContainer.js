@@ -1,7 +1,9 @@
+import LogIn from "../components/LogIn"
 import User from "../components/User"
 import { useEffect, useState } from "react"
 
-const UserContainer = () => {
+
+const UserContainer = ({loggedInUser}) => {
 
     const [users, setUsers] = useState([])
 
@@ -17,6 +19,7 @@ const UserContainer = () => {
 
     return(
         <>
+        <LogIn loggedInUser={loggedInUser} users={users}/>
         <User user={users[0]}/>
         </>
     )

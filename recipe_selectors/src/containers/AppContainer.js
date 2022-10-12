@@ -18,18 +18,20 @@ const AppContainer = ({recipes, filterRecipe}) => {
             <>
             <div className="up-recipes">
                 <div className="recipe-hero main-recipe-hero">
+                <Link to={`/recipes/${mainRecipe.id}`} >
                             <img src={mainRecipe.img} alt={mainRecipe.name} />
                             <h4>{mainRecipe.name}</h4>
+                </Link>
                 </div>
                 <div className="recipe-hero right_sider_recipes">
                     {rightRecipes.map (recipe => {
                     return(
+                    <div className="recipe-hero">
                         <Link to={`/recipes/${recipe.id}`} key={recipe.id}>
-                        <div className="recipe-hero">
                             <img src={recipe.img} alt={recipe.name} />
                             <h4>{recipe.name}</h4>
-                        </div>
                         </Link>
+                    </div>
                     )
                     })}
                 </div>

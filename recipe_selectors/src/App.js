@@ -12,8 +12,14 @@ import Footer from './components/Footer';
 function App() {
   const access_key = "mEi0nGTNsKAjv7GHdhxfSw_aZfkwEES1J1I-NApn6OY"
 
+  
+  const [onlineUser, setOnlineUser] = useState()
   const [recipes, setRecipes] = useState([])
   const [filteredRecipes, setFilteredRecipes] = useState([])
+  
+  const loggedInUser = chosenUser => {
+    setOnlineUser(chosenUser)
+  }
  
   const fetchRecipes = async () => {
       const response = await fetch("http://localhost:8080/recipe");

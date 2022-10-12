@@ -47,6 +47,7 @@ const LogIn = ({users,loggedInUser}) => {
                     </select>
                     <button type="submit" id="log-in-btn">Log In</button>
                 </form>
+                <button id="log-in-register-btn">Register</button>
             </div>
         </div>
     )

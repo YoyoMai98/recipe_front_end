@@ -14,6 +14,10 @@
   object-position: 100% 0;
 }
 
+.search-container-card {
+  padding-top: 140px;
+}
+
 #search_input {
     padding: 10px;
     width: 50%;
@@ -44,7 +48,7 @@ input[type="search"]::-webkit-search-cancel-button {
     border-radius: 5px;
     color: #5a653d;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
     border: 0.1px solid #87805E;
     background-color: transparent;
     cursor: pointer;

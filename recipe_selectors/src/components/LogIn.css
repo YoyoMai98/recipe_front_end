@@ -2,14 +2,14 @@
   background-image: url("https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2874&q=80");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 800px;
+  height: 900px;
   position: relative;
 }
 
 .form-container{
   /* padding-top: calc(25% - 30px); */
   position: absolute;
-  top: 300px;
+  top: 350px;
   left: 26%;
   background-color: rgb(70, 88, 56, 0.6);
   display: flex;
@@ -32,7 +32,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     margin: 0;
     text-align: center;
     position: relative;
@@ -49,7 +49,7 @@
     color: #4d5f3e;
 }
   
-#log-in-btn {
+#log-in-btn, #log-in-register-btn {
     margin-left: 15px;
     height: 2.3em;
     width: 5em;
@@ -62,6 +62,10 @@
     cursor: pointer;
 }
   
-#log-in-btn:hover {
+#log-in-btn:hover, #log-in-register-btn:hover {
     box-shadow: 2px 2px #c7bd88;
+}
+
+#log-in-register-btn{
+  margin-bottom: 20px;
 }

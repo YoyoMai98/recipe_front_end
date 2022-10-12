@@ -68,6 +68,27 @@ function App() {
         setFilteredRecipes(filtered)
         if (searchTerm === "") setFilteredRecipes([])
     }
+  
+    const addFaveRecipe = async (recipeId, userId) => {
+      const originalUser = users.find(user => user.userId === userId)
+      const savedRecipe = recipes.find(recipe => recipe.id === recipeId)
+      originalUser.favRecipes.push(savedRecipe)
+
+      await fetch ("http://localhost:8080/users/fav?userId="+userId+"&recipeId="+recipeId,{
+        method: "PUT",headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(originalUser)
+      })
+
+      const userList = users.map(user => {
+        if (user.userId === userId) {
+          return originalUser
+        }
+        else {return user}
+      })
+
+      setOnlineUser(originalUser)
+      setUsers (userList)
+    }
 
   return (
     <>
@@ -77,7 +98,7 @@ function App() {
         <Route path='/' element={<Home recipes={recipes} filterRecipe={filterRecipe} postUser={postUser} />}/>
         <Route path='/recipes' element={<RecipeContainer recipes={recipes} setRecipes={setRecipes} filterRecipe={filterRecipe} filteredRecipes={filteredRecipes} postUser={postUser}/>} />
         <Route path='/account' element={<UserContainer onlineUser={onlineUser} loggedInUser={loggedInUser} users={users} postUser={postUser}/>} />
-        <Route path="/recipes/:recipeId" element={<SingleRecipe />} />
+        <Route path="/recipes/:recipeId" element={<SingleRecipe user={onlineUser} addFaveRecipe={addFaveRecipe} />} />
       </Routes>
     </BrowserRouter>
     </>

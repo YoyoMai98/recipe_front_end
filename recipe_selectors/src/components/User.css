@@ -1,5 +1,11 @@
-.user{
+.user {
   margin: 10px;
+}
+
+.user-name {
+  padding: 10px;
+  margin: 10px;
+  background-color: #dbcda0;
 }
 
 #log-out {

@@ -10,14 +10,15 @@ const User = ({user, loggedInUser}) => {
         })
         window.location.reload()
     }
-
     
     return (
         <div className="user">
-            <h2>{user ? user.name : ""}</h2>
+            <div className="user-name">
+                <h2>{user ? user.name : ""}</h2>
+            </div>
             <h3>Favourite Recipes</h3>
             <ul>
-            {user ? user.favRecipes.map(favRecipe => {
+            {user && user.favRecipes.length > 0 ? user.favRecipes.map(favRecipe => {
                 
                 return <li>{favRecipe.name}</li>
             }):<li></li>}

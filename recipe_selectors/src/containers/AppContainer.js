@@ -12,7 +12,7 @@ const AppContainer = ({recipes, filterRecipe}) => {
 
     return (
         <>
-        <Search filterRecipe={filterRecipe}/>
+        <Search filterRecipe={filterRecipe} className="home_search"/>
         <div className="home">
             {recipes.length >= 1 ? 
             <>

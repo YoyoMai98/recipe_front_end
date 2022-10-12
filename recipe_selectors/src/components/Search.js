@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Search.css"
 
-const Search = ({filterRecipe}) => {
+const Search = ({filterRecipe, className}) => {
     const navigate = useNavigate()
     const [searchTerm, setSearchTerm] = useState("");
     
@@ -15,8 +16,13 @@ const Search = ({filterRecipe}) => {
         navigate("/recipes")
     }
 
+    const handleClick = () => {
+        setSearchTerm("")
+        filterRecipe("")
+    }
+
     return (
-        <form className="search" role="search" onSubmit={handleSubmit}>
+        <form className={`search ${className}`} role="search" onSubmit={handleSubmit}>
             <input
             type="search"
             placeholder="Find a Recipe"
@@ -24,7 +30,9 @@ const Search = ({filterRecipe}) => {
             value={searchTerm}
             onChange={handleChange}
             />
-
+            <span className={searchTerm? "clear-btn" : "hidden"}>
+                <img onClick={handleClick} src="https://www.nationalgallery.org.uk/v2/img/icons/close-thin.svg" alt="clear" />
+            </span>
             <input 
             type="submit"
             id="search_button"

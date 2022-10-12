@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import Footer from "./Footer"
 import "./SingleRecipe.css"
 
 
 const access_key = "mEi0nGTNsKAjv7GHdhxfSw_aZfkwEES1J1I-NApn6OY"
 
-const SingleRecipe = ({user, addFaveRecipe}) => {
+const SingleRecipe = ({user, addFaveRecipe, loggedInUser, postUser}) => {
 
     const {recipeId} = useParams()
     const [recipe, setRecipe] = useState()
@@ -39,6 +40,7 @@ const SingleRecipe = ({user, addFaveRecipe}) => {
     }, [])
     
     return (
+        <>
         <div className="singleRecipeCard">
             {recipe? 
             <>
@@ -62,14 +64,19 @@ const SingleRecipe = ({user, addFaveRecipe}) => {
                     <p>Gluten: {recipe.glutenFree ? "Yes" : "No"}</p>
                     <p>Vegan: {recipe.vegan ? "Yes" : "No"}</p>
                     <p>Vegetarian: {recipe.vegetarian ? "Yes" : "No"}</p>
+                    <div className = "favourite_button">
+                        <button onClick={handleClick}>Add to Favourites &#9829; </button>
+                     </div>
                 </div> 
             </div>
-            <div className = "favourite_button">
+            {/* <div className = "favourite_button">
                 <button onClick={handleClick}>Add to Favourites &#9829; </button>
-            </div>
+            </div> */}
             </> 
              : <p></p> }
         </div>
+        <Footer loggedInUser={loggedInUser} postUser={postUser}/>
+        </>
     )
 }
 

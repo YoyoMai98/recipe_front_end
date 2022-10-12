@@ -20,7 +20,15 @@
   background-color: #EDDFB3;
   cursor: pointer;
 }
-  
+
+.user h3 {
+  margin: 15px;
+}
+
+.user ul li {
+  list-style: none;
+}
+
 #log-out:hover {
     box-shadow: 2px 2px #87805E;
 }

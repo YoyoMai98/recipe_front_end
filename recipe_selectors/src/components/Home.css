@@ -3,6 +3,11 @@
     background-color: #B09B71;
 }
 
+.home a {
+    color: black;
+    text-align: center;
+}
+
 .up-recipes {
     display: flex;
     justify-content: space-evenly;
@@ -25,6 +30,7 @@
 
 .recipe-hero img {
     width: 80%;
+    margin-top: 20px;
     border-radius: 5px;
 }
 

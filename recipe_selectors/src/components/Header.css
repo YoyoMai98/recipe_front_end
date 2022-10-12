@@ -8,8 +8,13 @@ header {
 
 #header_left {
     margin: 10px;
+    /* 
     font-size: 35px;
-    font-weight: 600;
+    font-weight: 600; */
+}
+
+#header_left img {
+    width: 40%;
 }
 
 .header_right {

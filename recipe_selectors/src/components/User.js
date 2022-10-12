@@ -20,7 +20,7 @@ const User = ({user, loggedInUser}) => {
             <ul>
             {user && user.favRecipes.length > 0 ? user.favRecipes.map(favRecipe => {
                 
-                return <li>{favRecipe.name}</li>
+                return <li key={favRecipe.id}>{favRecipe.name}</li>
             }):<li></li>}
             </ul>
             <button onClick={logOut} id="log-out">Log Out</button>

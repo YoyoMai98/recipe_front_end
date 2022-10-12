@@ -1,7 +1,13 @@
 .recipe {
     padding: 10px;
+    text-align: center;
 }
 
 .recipe img {
     width: 100%;
+    border-radius: 4px;
+}
+
+.recipe img:hover {
+    box-shadow: 2px 2px #87805E;
 }

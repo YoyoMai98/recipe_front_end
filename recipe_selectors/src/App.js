@@ -98,7 +98,7 @@ function App() {
         <Route path='/' element={<Home recipes={recipes} filterRecipe={filterRecipe} postUser={postUser} loggedInUser={loggedInUser} />}/>
         <Route path='/recipes' element={<RecipeContainer recipes={recipes} setRecipes={setRecipes} filterRecipe={filterRecipe} filteredRecipes={filteredRecipes} postUser={postUser} loggedInUser={loggedInUser} /> } />
         <Route path='/account' element={<UserContainer onlineUser={onlineUser} loggedInUser={loggedInUser} users={users} postUser={postUser}/>} />
-        <Route path="/recipes/:recipeId" element={<SingleRecipe user={onlineUser} addFaveRecipe={addFaveRecipe} />} />
+        <Route path="/recipes/:recipeId" element={<SingleRecipe user={onlineUser} addFaveRecipe={addFaveRecipe} loggedInUser={loggedInUser} postUser={postUser}/>} />
       </Routes>
     </BrowserRouter>
     </>

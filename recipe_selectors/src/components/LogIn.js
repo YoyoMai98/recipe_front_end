@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./LogIn.css"
 
-const LogIn = ({users,loggedInUser}) => {
+const LogIn = ({users,loggedInUser, postUser}) => {
     const navigate = useNavigate()
 
     const [chosenUser, setChosenUser] = useState({
@@ -32,6 +32,8 @@ const LogIn = ({users,loggedInUser}) => {
         return <option key={user.userId} value={user.userId}>{user.name}</option>
     }) : []
 
+    const handleClick = () => {}
+
     return (
         <div className="form-bg">
             <div className="form-container">
@@ -47,7 +49,7 @@ const LogIn = ({users,loggedInUser}) => {
                     </select>
                     <button type="submit" id="log-in-btn">Log In</button>
                 </form>
-                <button id="log-in-register-btn">Register</button>
+                <button onClick={handleClick} id="log-in-register-btn">Register</button>
             </div>
         </div>
     )

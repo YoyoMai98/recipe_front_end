@@ -13,7 +13,7 @@ const Home = ({recipes, filterRecipe, loggedInUser, postUser}) => {
 
     return (
         <>
-        <Search filterRecipe={filterRecipe} className="home_search" searchClassName="search-container"/>
+        <Search filterRecipe={filterRecipe} className="home_search" searchClassName="search-container" searchCardClassName="search-container-card"/>
         <div className="home">
             {recipes.length >= 1 ? 
             <>

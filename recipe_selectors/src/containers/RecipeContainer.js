@@ -65,7 +65,7 @@ const RecipeContainer = ({recipes, setRecipes, filterRecipe, filteredRecipes, lo
 
     return (
         <>
-        <Search filterRecipe={filterRecipe} className="recipes_search" searchClassName="recipe-search-container"/>
+        <Search filterRecipe={filterRecipe} className="recipes_search" searchClassName="recipe-search-container" searchCardClassName=""/>
         <RecipeList recipes={filteredRecipes.length > 0 ? filteredRecipes : recipes}/>
         {/* <IngredientsList ingredients={ingredients}/> */}
         <div className={clicked ? "hidden" : "footer_add_recipe"}>

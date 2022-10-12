@@ -74,10 +74,9 @@ function App() {
     <BrowserRouter>
     <Header />
       <Routes>
-        <Route path='/' element={<Home recipes={recipes} filterRecipe={filterRecipe} />}/>
-        <Route path='/recipes' element={<RecipeContainer recipes={recipes} setRecipes={setRecipes} filterRecipe={filterRecipe} filteredRecipes={filteredRecipes}/>} />
-        <Route path='/addnewrecipe' element={<AddNewRecipeForm/>} />
-        <Route path='/account' element={<UserContainer onlineUser={onlineUser} loggedInUser={loggedInUser} users={users} />} />
+        <Route path='/' element={<Home recipes={recipes} filterRecipe={filterRecipe} postUser={postUser} />}/>
+        <Route path='/recipes' element={<RecipeContainer recipes={recipes} setRecipes={setRecipes} filterRecipe={filterRecipe} filteredRecipes={filteredRecipes} postUser={postUser}/>} />
+        <Route path='/account' element={<UserContainer onlineUser={onlineUser} loggedInUser={loggedInUser} users={users} postUser={postUser}/>} />
         <Route path="/recipes/:recipeId" element={<SingleRecipe />} />
       </Routes>
     </BrowserRouter>

@@ -7,7 +7,7 @@ import Search from "../components/Search";
 
 const access_key = "mEi0nGTNsKAjv7GHdhxfSw_aZfkwEES1J1I-NApn6OY"
 
-const RecipeContainer = ({recipes, setRecipes, filterRecipe, filteredRecipes}) => {
+const RecipeContainer = ({recipes, setRecipes, filterRecipe, filteredRecipes, loggedInUser, postUser}) => {
 
     const [ingredients, setIngredients] = useState([])
     const [clicked, setClicked] = useState(false)
@@ -74,7 +74,7 @@ const RecipeContainer = ({recipes, setRecipes, filterRecipe, filteredRecipes}) =
         {clicked? (
             <AddNewRecipeForm ingredients={ingredients} addNewRecipe={addNewRecipe}/>
         ) : <p className="hidden"></p>}
-       
+       <Footer loggedInUser={loggedInUser} postUser={postUser}/>
         </>
 
     )

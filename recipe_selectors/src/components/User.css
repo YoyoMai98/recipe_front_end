@@ -1,0 +1,20 @@
+.user{
+  margin: 10px;
+}
+
+#log-out {
+  margin-left: 15px;
+  height: 2.3em;
+  width: 5em;
+  border-radius: 5px;
+  color: #4d5f3e;
+  font-size: 18px;
+  font-weight: 550;
+  border: 0.1px solid #EDDFB3;
+  background-color: #EDDFB3;
+  cursor: pointer;
+}
+  
+#log-out:hover {
+    box-shadow: 2px 2px #87805E;
+}

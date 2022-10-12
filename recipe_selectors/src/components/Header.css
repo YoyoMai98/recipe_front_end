@@ -25,3 +25,21 @@ header a {
 #header_right_recipe {
     margin-right: 10px;
 }
+
+#header_right_recipe:hover {
+    text-shadow: #87805E;
+    border-bottom: 7px solid #c7bd88;
+}
+
+#header_right_recipe:active {
+    border-bottom: 7px solid #c7bd88;
+  }
+  
+#header_account:hover {
+    text-shadow: #87805E;
+    border-bottom: 7px solid #c7bd88;
+}
+
+#header_account:active {
+    border-bottom: 7px solid #c7bd88;
+  }

@@ -5,6 +5,15 @@
     position: relative;
 }
 
+.search-container {
+  background-image: url("https://images.unsplash.com/photo-1487147264018-f937fba0c817?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  object-fit: cover;
+  object-position: 100% 0;
+}
+
 #search_input {
     padding: 10px;
     width: 50%;
@@ -20,7 +29,7 @@ input[type="search"]::-webkit-search-cancel-button {
 .clear-btn {
     position: absolute;
     top: 33px;
-    right: calc(25% - 10px + 5em);
+    right: calc(25% + 50px + 5em);
     cursor: pointer;
   }
   
@@ -46,6 +55,6 @@ input[type="search"]::-webkit-search-cancel-button {
   }
 
 .home_search {
-    margin: 30px 0;
+    margin: 0;
     padding: 30px 0;
 }

@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import Search from "../components/Search";
-import "./AppContainer.css";
+import Footer from "./Footer";
+import "./Home.css";
 
-const AppContainer = ({recipes, filterRecipe}) => {
+const Home = ({recipes, filterRecipe, loggedInUser, postUser}) => {
 
     const recipeHero = recipes.filter(recipe => recipe.averageRating > 4);
 
@@ -18,7 +19,7 @@ const AppContainer = ({recipes, filterRecipe}) => {
             <>
             <div className="up-recipes">
                 <div className="recipe-hero main-recipe-hero">
-                <Link to={`/recipes/${mainRecipe.id}`} >
+                <Link to={`/recipes/${mainRecipe.id}`}>
                             <img src={mainRecipe.img} alt={mainRecipe.name} />
                             <h4>{mainRecipe.name}</h4>
                 </Link>
@@ -26,8 +27,8 @@ const AppContainer = ({recipes, filterRecipe}) => {
                 <div className="recipe-hero right_sider_recipes">
                     {rightRecipes.map (recipe => {
                     return(
-                    <div className="recipe-hero">
-                        <Link to={`/recipes/${recipe.id}`} key={recipe.id}>
+                    <div className="recipe-hero" key={recipe.id}>
+                        <Link to={`/recipes/${recipe.id}`}>
                             <img src={recipe.img} alt={recipe.name} />
                             <h4>{recipe.name}</h4>
                         </Link>
@@ -39,8 +40,9 @@ const AppContainer = ({recipes, filterRecipe}) => {
             </>
            : <div></div> }
         </div>
+        <Footer loggedInUser={loggedInUser} postUser={postUser} />
         </>
     )
 }
 
-export default AppContainer
+export default Home

@@ -3,6 +3,7 @@ import RecipeList from "../components/RecipeList";
 import IngredientsList from "../components/IngredientsList";
 import AddNewRecipeForm from "../components/AddNewRecipeForm";
 import Search from "../components/Search";
+import Footer from "../components/Footer"
 
 
 const access_key = "mEi0nGTNsKAjv7GHdhxfSw_aZfkwEES1J1I-NApn6OY"
@@ -64,7 +65,7 @@ const RecipeContainer = ({recipes, setRecipes, filterRecipe, filteredRecipes, lo
 
     return (
         <>
-        <Search filterRecipe={filterRecipe} className="recipes_search"/>
+        <Search filterRecipe={filterRecipe} className="recipes_search" searchClassName="recipe-search-container"/>
         <RecipeList recipes={filteredRecipes.length > 0 ? filteredRecipes : recipes}/>
         {/* <IngredientsList ingredients={ingredients}/> */}
         <div className={clicked ? "hidden" : "footer_add_recipe"}>

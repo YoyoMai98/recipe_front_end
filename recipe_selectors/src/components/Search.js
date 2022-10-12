@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Search.css"
 
-const Search = ({filterRecipe, className}) => {
+const Search = ({filterRecipe, className, searchClassName}) => {
     const navigate = useNavigate()
     const [searchTerm, setSearchTerm] = useState("");
     
@@ -22,7 +22,7 @@ const Search = ({filterRecipe, className}) => {
     }
 
     return (
-        <div className="search-container">
+        <div className={`${searchClassName}`}>
             <form className={`search ${className}`} role="search" onSubmit={handleSubmit}>
                 <input
                 type="search"

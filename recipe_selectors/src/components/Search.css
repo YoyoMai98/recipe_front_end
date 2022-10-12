@@ -28,8 +28,8 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .clear-btn {
     position: absolute;
-    top: 33px;
-    right: calc(25% + 50px + 5em);
+    top: 40%;
+    right: calc(25% - 15px + 5em);
     cursor: pointer;
   }
   
@@ -56,5 +56,5 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .home_search {
     margin: 0;
-    padding: 30px 0;
+    padding: 20px 0;
 }

@@ -3,7 +3,7 @@
   <img src="https://github.com/YoyoMai98/recipe_front_end/blob/main/recipe_selectors/src/components/Logo.png" alt="Perfect Plate"/>
 </p>
 
-Use our website to design a Perfect Plate.
+<p align="center">Use our website to design a Perfect Plate.</p>
 
 ## **Who we are**
 We are the team behind Perfect Plates. 4 members of Cohort 6 from the Bright Network Technology Academy!

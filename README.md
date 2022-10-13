@@ -30,24 +30,25 @@ We are the team behind Perfect Plates. 4 members of Cohort 6 from the Bright Net
 * [Default ReactJs Available Scripts](#default-reactjs-available-scripts)
 
 ## **Project Overview**
-As part of the Bright Network Technology Academy, we were assigned a group project to research, plan and develop a Frontend website based on a backend API that was developed by a different group on the course, in less than a week. As a group, we wanted to utilise all the functionality the API provided.
+As part of the Bright Network Technology Academy, we were assigned a group project to research, plan and develop a Frontend website based on a [backend API](https://github.com/hanqing2001/API_group_project.git) that was developed by a different group on the course, in less than a week. As a group, we wanted to utilise all the functionality the API provided.
 
 ### **This Website Features**
 - Login functionality
-- Create users
-- Create recipes
-- Search a recipe
+- Create new users
+- Create new recipes
+- Search recipes by name
 - Display recipes with details
 - Add favourite recipes to users
 
 ## **Setup and Instructions for using the Project**
 
-1. Make sure that you have Java 17 and Node installed to run the Recipe API and React
-2. Clone [Recipe API](https://github.com/YoyoMai98/Recipe_API.git) by typing the following commands into your terminal: ```git clone git@github.com:YoyoMai98/Recipe_API.git``` 
-3. Clone this repository by typing the following commands into your terminal: ```git clone git@github.com:YoyoMai98/recipe_front_end.git```
-4. Make a database titled "recipe_selector" using the following command: ```createdb recipe_selector```
-5. Within IntelliJ run the programme
-6. Within your terminal navigate to the `recipe_selectors` folder and run the following two commands:
+1. This Frontend project runs on React and the Spring Boot API runs on Java 17. Make sure you have IDE and Node installed to run the Recipe API and React. We used IntelliJ and VSCode respectively.
+2. Clone [Recipe API](https://github.com/YoyoMai98/Recipe_API.git) by typing the following commands into your terminal:
+```git clone git@github.com:YoyoMai98/Recipe_API.git```. Open API in IDE.
+3. Clone this repository ```git clone git@github.com:YoyoMai98/recipe_front_end.git```. Open project in VSCode.
+4. Create a database titled "recipe_selector" (```createdb recipe_selector```)
+5. Within IntelliJ run the application
+6. Within VSCode, navigate your terminal to the `recipe_selectors` folder and run the following two commands:
 ```npm install```
 and
 ```npm start```

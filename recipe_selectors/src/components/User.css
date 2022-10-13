@@ -25,6 +25,10 @@
   margin: 15px;
 }
 
+.user a {
+  color: #4d5f3e;
+}
+
 .user ul li {
   list-style: none;
 }

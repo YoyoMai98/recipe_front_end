@@ -14,6 +14,7 @@
     border: 0.1px solid transparent;
     font-weight: 550;
     color: #4d5f3e;
+    cursor: pointer;
 }
 
 .footer_add_recipe button:hover {
@@ -60,6 +61,7 @@
     border: 0.1px solid transparent;
     font-weight: 550;
     color: #4d5f3e;
+    cursor: pointer;
 }
 
 #registrationButton:hover {

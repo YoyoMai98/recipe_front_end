@@ -1,8 +1,17 @@
-import { Link } from "react-router-dom"
+import { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import "./Header.css"
 import logo from "./logo.png"
 
 const Header = () => {
+
+    // const[clicked, setClicked] = useState(false)
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        navigate("/recipes")
+        window.location.reload()
+    }
     
     return (
         <>
@@ -11,7 +20,7 @@ const Header = () => {
                 <img src={logo} alt="Perfect Plate" />
             </Link>
             <div className="header_right">
-            <Link to="/recipes" id="header_right_recipe" >Recipe</Link>
+            <button id="header_right_recipe" onClick={handleClick}>Recipe</button>
             <Link to="/account" id="header_account">Account</Link>
             </div>
         </header>

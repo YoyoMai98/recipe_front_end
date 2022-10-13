@@ -13,6 +13,7 @@ const Search = ({filterRecipe, className, searchClassName, searchCardClassName})
     const handleSubmit = event => {
         event.preventDefault()
         filterRecipe(searchTerm)
+        setSearchTerm("")
         navigate("/recipes")
     }
 

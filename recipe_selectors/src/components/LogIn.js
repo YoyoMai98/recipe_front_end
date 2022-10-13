@@ -9,6 +9,11 @@ const LogIn = ({users,loggedInUser, postUser}) => {
         name:"",
         favRecipes:[],
     })
+    const [clicked, setClicked] = useState(false)
+    const [newUser, setNewUser] = useState({
+        name: "",
+        favRecipes: []
+    })
 
     const handleChange = event => {
         const userId = parseInt(event.target.value);
@@ -28,15 +33,41 @@ const LogIn = ({users,loggedInUser, postUser}) => {
         navigate("/account")
     }
 
+    const handleRegisterChange = event => {
+        const propertyName = event.target.name
+        const savedUser = {...newUser}
+        savedUser[propertyName] = event.target.value
+        setNewUser(savedUser)
+    }
+
+    const handleRegisterSubmit = event => {
+        event.preventDefault();
+        postUser(newUser)
+        loggedInUser(newUser)
+        setNewUser({
+            name:"",
+            favRecipes:[]
+        })
+        navigate("/account")
+    }
+
     const UserOptions = users? users.map((user)=>{
         return <option key={user.userId} value={user.userId}>{user.name}</option>
     }) : []
 
-    const handleClick = () => {}
+    const handleRegisterClick = () => {
+        setClicked(true)
+    }
+
+    const handleLogInClick = () => {
+        setClicked(false)
+    }
 
     return (
         <div className="form-bg">
             <div className="form-container">
+                {!clicked ?
+                <>
                 <h3>Log into your account</h3>
                 <form onSubmit={handleFormSubmit} className="user-log-in-form">
                     <select 
@@ -49,7 +80,24 @@ const LogIn = ({users,loggedInUser, postUser}) => {
                     </select>
                     <button type="submit" id="log-in-btn">Log In</button>
                 </form>
-                <button onClick={handleClick} id="log-in-register-btn">Register</button>
+                </> :
+                <>
+                <h3>Perfect Plate</h3>
+                <form onSubmit={handleRegisterSubmit} className="user-log-in-form">
+                    <label htmlFor="name">Username</label>
+                    <input 
+                        name="name"
+                        onChange={handleRegisterChange}
+                        id="log-in-select"
+                        type="name" />
+                    <button type="submit" id="log-in-btn">Register</button>
+                </form>
+                </>
+                }
+                {!clicked?
+                    <button onClick={handleRegisterClick} id="log-in-register-btn">Register</button> :
+                    <button onClick={handleLogInClick} id="log-in-register-btn">Log In</button>
+                }
             </div>
         </div>
     )

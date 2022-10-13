@@ -1,4 +1,4 @@
-import Header from "./Header";
+import { Link } from "react-router-dom"
 import "./User.css"
 
 const User = ({user, loggedInUser}) => {
@@ -19,8 +19,11 @@ const User = ({user, loggedInUser}) => {
             <h3>Favourite Recipes</h3>
             <ul>
             {user && user.favRecipes.length > 0 ? user.favRecipes.map(favRecipe => {
-                
-                return <li key={favRecipe.id}>{favRecipe.name}</li>
+                return <>
+                    <Link to={`/recipes/${favRecipe.id}`}>
+                    <li key={favRecipe.id}>{favRecipe.name}</li>
+                    </Link>
+                    </>
             }):<li></li>}
             </ul>
             <button onClick={logOut} id="log-out">Log Out</button>

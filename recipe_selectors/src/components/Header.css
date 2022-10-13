@@ -28,7 +28,14 @@ header a {
 }
 
 #header_right_recipe {
+    box-sizing: border-box;
+    border: 7px solid transparent;
+    background-color: transparent;
     margin-right: 10px;
+    font-size: 25px;
+    font-weight: 550;
+    color: #5a653d;
+    cursor: pointer;
 }
 
 #header_right_recipe:hover {

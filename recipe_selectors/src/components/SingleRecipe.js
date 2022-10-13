@@ -11,6 +11,7 @@ const SingleRecipe = ({user, addFaveRecipe, loggedInUser, postUser}) => {
     const {recipeId} = useParams()
     const [recipe, setRecipe] = useState()
     const [faveRecipe, setFaveRecipe] = useState()
+    const [className, setClassName] = useState("hidden")
 
     const fetchSingleRecipe = async () => {
         const response = await fetch("http://localhost:8080/recipe/" + recipeId)
@@ -29,10 +30,16 @@ const SingleRecipe = ({user, addFaveRecipe, loggedInUser, postUser}) => {
         return imageData.results[1].urls.regular
     }
     const handleClick = () => {
-        setFaveRecipe(recipe) 
-        addFaveRecipe(parseInt(recipeId), user.userId) 
-        // window.location = "https:localhost:3000/recipes?"+recipeId
-        // window.location.reload()
+        if(!user){
+            setClassName("display")
+            return
+        }
+        setFaveRecipe(recipe)
+        if(user.favRecipes.find(recipe => recipe.id === parseInt(recipeId))){
+            setFaveRecipe()
+        }else{
+            addFaveRecipe(parseInt(recipeId), user.userId)
+        }
     }
 
     useEffect(() => {
@@ -66,12 +73,10 @@ const SingleRecipe = ({user, addFaveRecipe, loggedInUser, postUser}) => {
                     <p>Vegetarian: {recipe.vegetarian ? "Yes" : "No"}</p>
                     <div className = "favourite_button">
                         <button onClick={handleClick}>Add to Favourites &#9829; </button>
+                        <p className={className}>Please Log In</p>
                      </div>
                 </div> 
             </div>
-            {/* <div className = "favourite_button">
-                <button onClick={handleClick}>Add to Favourites &#9829; </button>
-            </div> */}
             </> 
              : <p></p> }
         </div>

@@ -84,6 +84,7 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
         <input
           type="number"
           name="time"
+          min="1"
           value={newRecipe.time}
           onChange={handleChange}
         />
@@ -92,6 +93,7 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
         <input
           type="number"
           name="calories"
+          min="1"
           value={newRecipe.calories}
           onChange={handleChange}
         />
@@ -100,6 +102,7 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
         <input
           type="number"
           name="servings"
+          min="1"
           value={newRecipe.servings}
           onChange={handleChange}
         />

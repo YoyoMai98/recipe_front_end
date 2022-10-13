@@ -1,11 +1,20 @@
 # **Perfect Plate**
+![Alt](https://github.com/YoyoMai98/recipe_front_end/blob/main/recipe_selectors/src/components/Logo.png)
+
+Use our website to design a Perfect Plate.
 
 ## **Who we are**
-![Alt](https://github.com/YoyoMai98/recipe_front_end/blob/main/recipe_selectors/src/components/Logo.png)
-**Use our website to design a Perfect Plate.**
+We are the team behind Perfect Plates. 4 members of Cohort 6 from the Bright Network Technology Academy!
+* Khatija Bhayat
+  * [Github](https://github.com/ktb13)
+* Hasmeet Kaur
+  * [Github](https://github.com/HasmeetKaur)
+* Tioluwani Babayemi
+  * [Github](https://github.com/tio982)
+* Yongran Mai
+  * [Github](https://github.com/YoyoMai98)
 
 ## **Table of Contents**
-* [Team Overview](#team-overview)
 * [Project Overview](#project-overview)
 * [This Website Features](#this-website-features)
 * [Setup and Instructions](#setup-and-instructions-for-using-the-project)
@@ -17,17 +26,6 @@
 * [Further Implementations](#further-implementations--extensions)
 * [Acknowledgements](#acknowledgments)
 * [Default ReactJs Available Scripts](#default-reactjs-available-scripts)
-
-## **Team Overview**
-We are the team behind Perfect Plates. 4 members of Cohort 6 from the Bright Network Technology Academy!
-* Khatija Bhayat
-  * [Github](https://github.com/ktb13)
-* Hasmeet Kaur
-  * [Github](https://github.com/HasmeetKaur)
-* Tioluwani Babayemi
-  * [Github](https://github.com/tio982)
-* Yongran Mai
-  * [Github](https://github.com/YoyoMai98)
 
 ## **Project Overview**
 As part of the Bright Network Technology Academy, we were assigned a group project to research, plan and develop a Frontend website based on a backend API that was developed by a different group on the course, in less than a week. As a group, we wanted to utilise all the functionality the API provided.

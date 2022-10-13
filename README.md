@@ -2,10 +2,11 @@
 <p align="center">
   <img src="https://github.com/YoyoMai98/recipe_front_end/blob/main/recipe_selectors/src/components/Logo.png" alt="Perfect Plate"/>
 </p>
-<p align="center">Use our website to design a Perfect Plate.</p>
+<p align="center">Use our website to design a Perfect Plate</p>
 
 ## **Who we are**
 We are the team behind Perfect Plates. 4 members of Cohort 6 from the Bright Network Technology Academy!
+
 * Khatija Bhayat
   * [Github](https://github.com/ktb13)
 * Hasmeet Kaur
@@ -78,24 +79,30 @@ This project is structured as below.
 
 ## **MVP**
 For our MVP, we wanted to create a website with maximum functionality which included:
-* Home page
-* Recipe list page
-* User Account page
+
+* Display a list of recipes with images
+* Account page to display user information
+* Register a new account
+* Add a new recipe
+* Search recipes by name
 
 ## **Extensions**
+
 * Allow a user to add a favourite recipe to their account and display it
 * Single Recipe page
 * Login functionality
 
 ## **Further Implementations**
 Further functionalities we would like to develop into this website are:
+
 * Create a single ingredients card
 * Have an image slider for the home page
 * Create functionality to add a new ingredient
-* Add a rating for each recipe.
+* Add a rating for each recipe
+* Search recipes by ingredients
 
 ## **Acknowledgments:**
-A special thank you to [BNTA team](https://techacademy.brightnetwork.co.uk/) and especially to Anna, Colin, Eoan, Ed, Phil, Richard and Zsolt, for all the advice and support during the project.
+A special thank you to [BNTA team](https://techacademy.brightnetwork.co.uk/) and especially to Anna, Colin, Ed, Eoan, Phil, Richard and Zsolt, for all the advice and support during the project.
 You've made this learning process a blast!
 
 ## Default ReactJs Available Scripts

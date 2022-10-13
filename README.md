@@ -52,7 +52,7 @@ As part of the Bright Network Technology Academy, we were assigned a group proje
 ## **Project Structure:**
 This project is structured as below.
 
-### **Component Diagram:**
+### **Component Diagrams:**
 ![Alt](/component_diagram.png "Component Diagram")
 
 ### **Wireframes:**

@@ -6,7 +6,6 @@ import logoText from "./logoText.png"
 
 const Header = ({setSearchTerm, filterRecipe}) => {
 
-    // const[clicked, setClicked] = useState(false)
     const navigate = useNavigate()
 
     const handleClick = () => {

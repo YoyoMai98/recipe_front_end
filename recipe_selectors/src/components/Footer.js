@@ -2,7 +2,7 @@ import "./Footer.css"
 import {useNavigate} from 'react-router-dom'
 import { useState } from "react"
 
-const Footer = ({loggedInUser, postUser}) =>{
+const Footer = ({postUser}) =>{
 
     const navigate = useNavigate()
     const [user, setUser] = useState({

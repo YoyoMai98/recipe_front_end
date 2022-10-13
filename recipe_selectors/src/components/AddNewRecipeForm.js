@@ -18,17 +18,8 @@ const AddNewRecipeForm = ({ addNewRecipe, ingredients }) => {
     ingredients: [],
   });
 
-  const [newIngredient, setNewIngredient] = useState({
-    name: "",
-    isGlutenFree: false,
-    isVegan: false,
-    isVegetarian: false,
-    allergensContained: "NONE",
-  });
-
   const [selectedValues, setselectedValues] = useState({ selected: [] });
   const [selection, setSelection] = useState([]);
-  // const [selectedIngredients, setSelectedIngredients] = useState([]);
 
   useEffect(() => {
     if(selection.length < 1) {

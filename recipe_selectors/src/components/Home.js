@@ -3,7 +3,7 @@ import Search from "../components/Search";
 import Footer from "./Footer";
 import "./Home.css";
 
-const Home = ({recipes, filterRecipe, loggedInUser, postUser, searchTerm, setSearchTerm}) => {
+const Home = ({recipes, filterRecipe, postUser, searchTerm, setSearchTerm}) => {
 
     const recipeHero = recipes.filter(recipe => recipe.averageRating > 4);
 
@@ -42,7 +42,7 @@ const Home = ({recipes, filterRecipe, loggedInUser, postUser, searchTerm, setSea
             </>
            : <div></div> }
         </div>
-        <Footer loggedInUser={loggedInUser} postUser={postUser} />
+        <Footer postUser={postUser} />
         </>
     )
 }

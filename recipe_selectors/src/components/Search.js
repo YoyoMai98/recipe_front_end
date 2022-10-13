@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Search.css"
 
 const Search = ({filterRecipe, className, searchClassName, searchCardClassName, searchTerm, setSearchTerm}) => {
     const navigate = useNavigate()
-    // const [searchTerm, setSearchTerm] = useState("");
     
     const handleChange = event => {
         setSearchTerm(event.target.value)

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import RecipeList from "../components/RecipeList";
-import IngredientsList from "../components/IngredientsList";
 import AddNewRecipeForm from "../components/AddNewRecipeForm";
 import Search from "../components/Search";
 import Footer from "../components/Footer"
@@ -8,7 +7,7 @@ import Footer from "../components/Footer"
 
 const access_key = "mEi0nGTNsKAjv7GHdhxfSw_aZfkwEES1J1I-NApn6OY"
 
-const RecipeContainer = ({recipes, setRecipes, filterRecipe, filteredRecipes, loggedInUser, postUser, searchTerm, setSearchTerm}) => {
+const RecipeContainer = ({recipes, setRecipes, filterRecipe, filteredRecipes, postUser, searchTerm, setSearchTerm}) => {
 
     const [ingredients, setIngredients] = useState([])
     const [clicked, setClicked] = useState(false)
@@ -67,7 +66,6 @@ const RecipeContainer = ({recipes, setRecipes, filterRecipe, filteredRecipes, lo
         <>
         <Search filterRecipe={filterRecipe} className="recipes_search" searchClassName="recipe-search-container" searchCardClassName="" searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
         <RecipeList recipes={filteredRecipes.length > 0 ? filteredRecipes : recipes}/>
-        {/* <IngredientsList ingredients={ingredients}/> */}
         <div className={clicked ? "hidden" : "footer_add_recipe"}>
             <h2>Feeling creative to share your recipe?</h2>
             <button onClick={onClick}>Add new recipe</button>
@@ -75,7 +73,7 @@ const RecipeContainer = ({recipes, setRecipes, filterRecipe, filteredRecipes, lo
         {clicked? (
             <AddNewRecipeForm ingredients={ingredients} addNewRecipe={addNewRecipe}/>
         ) : <p className="hidden"></p>}
-       <Footer loggedInUser={loggedInUser} postUser={postUser}/>
+       <Footer postUser={postUser}/>
         </>
 
     )

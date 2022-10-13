@@ -43,29 +43,13 @@ As part of the Bright Network Technology Academy, we were assigned a group proje
 ## **Setup and Instructions for using the Project**
 
 1. Make sure that you have Java 17 and Node installed to run the Recipe API and React
-2. Clone [Recipe API](https://github.com/hanqing2001/API_group_project) by typing the following commands into your terminal: ```git clone git@github.com:hanqing2001/API_group_project.git``` 
+2. Clone [Recipe API](https://github.com/YoyoMai98/Recipe_API.git) by typing the following commands into your terminal: ```git clone git@github.com:YoyoMai98/Recipe_API.git``` 
 3. Clone this repository by typing the following commands into your terminal: ```git@github.com:YoyoMai98/recipe_front_end.git```
-4. Make a database titled "recipe_selector" using the following command: ```Createdb recipe_selector```
-5. Create a `configurations` folder with a `SpringGlobalConfig.java` file in your API `main` java folder:
-
-```
-@Configuration
-public class SpringGlobalConfig implements WebMvcConfigurer {
-
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowedOrigins("*")
-                .allowedHeaders("*")
-                .allowedMethods("*");
-    }
-
-}
-```
-
+4. Make a database titled "recipe_selector" using the following command: ```createdb recipe_selector```
 5. Within IntelliJ run the programme
 6. Within your terminal navigate to the `recipe_selectors` folder and run the following two commands:
 ```npm install```
+and
 ```npm start```
 7. Navigate to your web browser and if it has not already displayed, enter in the following URL:
 ```http://localhost:3000/```
@@ -102,14 +86,17 @@ For our MVP, we wanted to create a website with maximum functionality which incl
 * Display a list of recipes with images
 * Account page to display user information
 * Register a new account
-* Add a new recipe
+* Add a new recipe with current ingredients
 * Search recipes by name
 
 ## **Extensions**
 
-* Allow a user to add a favourite recipe to their account and display it
-* Single Recipe page
-* Login functionality
+What we have expanded on this front-end project:
+
+* Recipe card page to show recipe's details: calories, timing, servings, rating and etc
+* Allow a user to add a favourite recipe to their account
+* Display their favourite recipes in the account page
+* Login functionality: select username to log in or register a new account
 
 ## **Further Implementations**
 Further functionalities we would like to develop into this website are:
@@ -120,7 +107,7 @@ Further functionalities we would like to develop into this website are:
 * Add a rating for each recipe
 * Search recipes by ingredients
 
-## **Acknowledgments:**
+## **Acknowledgments**
 A special thank you to [BNTA team](https://techacademy.brightnetwork.co.uk/) and especially to Anna, Colin, Ed, Eoan, Phil, Richard and Zsolt, for all the advice and support during the project.
 You've made this learning process a blast!
 

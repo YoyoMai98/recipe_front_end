@@ -44,7 +44,7 @@ As part of the Bright Network Technology Academy, we were assigned a group proje
 
 1. Make sure that you have Java 17 and Node installed to run the Recipe API and React
 2. Clone [Recipe API](https://github.com/YoyoMai98/Recipe_API.git) by typing the following commands into your terminal: ```git clone git@github.com:YoyoMai98/Recipe_API.git``` 
-3. Clone this repository by typing the following commands into your terminal: ```git@github.com:YoyoMai98/recipe_front_end.git```
+3. Clone this repository by typing the following commands into your terminal: ```git clone git@github.com:YoyoMai98/recipe_front_end.git```
 4. Make a database titled "recipe_selector" using the following command: ```createdb recipe_selector```
 5. Within IntelliJ run the programme
 6. Within your terminal navigate to the `recipe_selectors` folder and run the following two commands:

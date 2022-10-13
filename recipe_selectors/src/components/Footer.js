@@ -20,7 +20,6 @@ const Footer = ({loggedInUser, postUser}) =>{
     const handleSubmit = event => {
         event.preventDefault();
         postUser(user)
-        loggedInUser(user)
         setUser({
             name:"",
             favRecipes:[]

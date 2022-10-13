@@ -15,6 +15,7 @@ function App() {
   const [onlineUser, setOnlineUser] = useState()
   const [recipes, setRecipes] = useState([])
   const [filteredRecipes, setFilteredRecipes] = useState([])
+  const [searchTerm, setSearchTerm] = useState("");
   
   const loggedInUser = chosenUser => {
     if(chosenUser.name==="") setOnlineUser()
@@ -54,6 +55,7 @@ function App() {
       })
       const savedUser =  await response.json()
       setUsers([...users, savedUser])
+      setOnlineUser(savedUser)
   }
 
   useEffect(() => {
@@ -69,18 +71,17 @@ function App() {
         if (searchTerm === "") setFilteredRecipes([])
     }
   
-    const addFaveRecipe = async (recipeId, userId) => {
-      const originalUser = users.find(user => user.userId === userId)
+    const addFaveRecipe = async (recipeId, originalUser) => {
       const savedRecipe = recipes.find(recipe => recipe.id === recipeId)
       originalUser.favRecipes.push(savedRecipe)
 
-      await fetch ("http://localhost:8080/users/fav?userId="+userId+"&recipeId="+recipeId,{
+      await fetch ("http://localhost:8080/users/fav?userId="+originalUser.userId+"&recipeId="+recipeId,{
         method: "PUT",headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(originalUser)
       })
 
       const userList = users.map(user => {
-        if (user.userId === userId) {
+        if (user.userId === originalUser.id) {
           return originalUser
         }
         else {return user}
@@ -93,10 +94,10 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    <Header />
+    <Header setSearchTerm={setSearchTerm} filterRecipe={filterRecipe} />
       <Routes>
-        <Route path='/' element={<Home recipes={recipes} filterRecipe={filterRecipe} postUser={postUser} loggedInUser={loggedInUser} />}/>
-        <Route path='/recipes' element={<RecipeContainer recipes={recipes} setRecipes={setRecipes} filterRecipe={filterRecipe} filteredRecipes={filteredRecipes} postUser={postUser} loggedInUser={loggedInUser} /> } />
+        <Route path='/' element={<Home recipes={recipes} filterRecipe={filterRecipe} postUser={postUser} loggedInUser={loggedInUser} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>}/>
+        <Route path='/recipes' element={<RecipeContainer recipes={recipes} setRecipes={setRecipes} filterRecipe={filterRecipe} filteredRecipes={filteredRecipes} postUser={postUser} loggedInUser={loggedInUser} searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> } />
         <Route path='/account' element={<UserContainer onlineUser={onlineUser} loggedInUser={loggedInUser} users={users} postUser={postUser}/>} />
         <Route path="/recipes/:recipeId" element={<SingleRecipe user={onlineUser} addFaveRecipe={addFaveRecipe} loggedInUser={loggedInUser} postUser={postUser}/>} />
       </Routes>

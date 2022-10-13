@@ -19,11 +19,11 @@ const User = ({user, loggedInUser}) => {
             <h3>Favourite Recipes</h3>
             <ul>
             {user && user.favRecipes.length > 0 ? user.favRecipes.map(favRecipe => {
-                return <>
+                return <div key={favRecipe.name + favRecipe.id}>
                     <Link to={`/recipes/${favRecipe.id}`}>
-                    <li key={favRecipe.id}>{favRecipe.name}</li>
+                    <li>{favRecipe.name}</li>
                     </Link>
-                    </>
+                    </div>
             }):<li></li>}
             </ul>
             <button onClick={logOut} id="log-out">Log Out</button>

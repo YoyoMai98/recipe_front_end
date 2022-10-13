@@ -6,16 +6,35 @@ header {
     width: 100%;
 }
 
-#header_left {
-    margin: 10px;
-    /* 
-    font-size: 35px;
-    font-weight: 600; */
+.header_left_img {
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
 
-#header_left img {
-    width: 40%;
+.logoImage {
+    margin: 10px 0 10px 20px;
+    width: 10%;
 }
+
+/* #header_left {
+    margin: 10px;
+} */
+
+#header_left img {
+    width: 70%;
+}
+
+.logoText {
+    margin: 0;
+    margin-left: -10px;
+    width: 40%;
+} 
+
+/* .logoText img {
+    width: 80%;
+} */
 
 .header_right {
     margin: 10px;
@@ -55,3 +74,14 @@ header a {
 #header_account:active {
     border-bottom: 7px solid #c7bd88;
   }
+
+.logoImage img:hover {
+    transition: transform .7s ease;
+    /* transform: rotate(3.142rad); */
+    transform: rotate(2turn);
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+

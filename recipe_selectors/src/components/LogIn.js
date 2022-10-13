@@ -17,7 +17,7 @@ const LogIn = ({users,loggedInUser, postUser}) => {
 
     const handleChange = event => {
         const userId = parseInt(event.target.value);
-        const selectedUser = users.find(user=> user.userId ===userId);
+        const selectedUser = users.find(user=> user.userId === userId);
         setChosenUser(selectedUser)
     }
 
@@ -43,7 +43,6 @@ const LogIn = ({users,loggedInUser, postUser}) => {
     const handleRegisterSubmit = event => {
         event.preventDefault();
         postUser(newUser)
-        loggedInUser(newUser)
         setNewUser({
             name:"",
             favRecipes:[]

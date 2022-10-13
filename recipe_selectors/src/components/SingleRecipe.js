@@ -6,7 +6,7 @@ import "./SingleRecipe.css"
 
 const access_key = "mEi0nGTNsKAjv7GHdhxfSw_aZfkwEES1J1I-NApn6OY"
 
-const SingleRecipe = ({user, addFaveRecipe, loggedInUser, postUser}) => {
+const SingleRecipe = ({user, loggedInUser, addFaveRecipe, postUser}) => {
 
     const {recipeId} = useParams()
     const [recipe, setRecipe] = useState()
@@ -38,7 +38,7 @@ const SingleRecipe = ({user, addFaveRecipe, loggedInUser, postUser}) => {
         if(user.favRecipes.find(recipe => recipe.id === parseInt(recipeId))){
             setFaveRecipe()
         }else{
-            addFaveRecipe(parseInt(recipeId), user.userId)
+            addFaveRecipe(parseInt(recipeId), user)
         }
     }
 

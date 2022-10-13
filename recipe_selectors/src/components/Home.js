@@ -3,7 +3,7 @@ import Search from "../components/Search";
 import Footer from "./Footer";
 import "./Home.css";
 
-const Home = ({recipes, filterRecipe, loggedInUser, postUser}) => {
+const Home = ({recipes, filterRecipe, loggedInUser, postUser, searchTerm, setSearchTerm}) => {
 
     const recipeHero = recipes.filter(recipe => recipe.averageRating > 4);
 
@@ -13,7 +13,9 @@ const Home = ({recipes, filterRecipe, loggedInUser, postUser}) => {
 
     return (
         <>
-        <Search filterRecipe={filterRecipe} className="home_search" searchClassName="search-container" searchCardClassName="search-container-card"/>
+        <Search filterRecipe={filterRecipe} className="home_search" searchClassName="search-container" searchCardClassName="search-container-card"
+        searchTerm={searchTerm} setSearchTerm={setSearchTerm}
+        />
         <div className="home">
             {recipes.length >= 1 ? 
             <>

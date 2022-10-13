@@ -1,25 +1,11 @@
-# **READ ME (Perfect Plate):**
+# **Perfect Plate**
+<p align="center">
+  <img src="https://github.com/YoyoMai98/recipe_front_end/blob/main/recipe_selectors/src/components/Logo.png" alt="Perfect Plate"/>
+</p>
 
-## **Who we are:**
-![Alt](/src/components/logo.png "Logo")
-**Use our website to design a Perfect Plate.**
+Use our website to design a Perfect Plate.
 
-## **Table of Contents:**
-* [Team Overview](#team-overview)
-* [Project Overview](#project-overview)
-* [This Website Features](#this-website-features)
-* [Setup and Instructions](#setup-and-instructions-for-using-the-project)
-* [Project Structure](#project-structure)
-* [Component Diagram](#component-diagram)
-* [Wireframes](#wireframes)
-* [Minimum Viable Product (MVP)](#mvp)
-* [Extensions](#extension)
-* [Testing](#testing)
-* [Further Implementations & Extensions](#further-implementations--extensions)
-* [Acknowledgements](#acknowledgments)
-* [Default ReactJs Available Scripts](#default-reactjs-available-scripts)
-
-## **Team Overview:**
+## **Who we are**
 We are the team behind Perfect Plates. 4 members of Cohort 6 from the Bright Network Technology Academy!
 * Khatija Bhayat
   * [Github](https://github.com/ktb13)
@@ -30,15 +16,31 @@ We are the team behind Perfect Plates. 4 members of Cohort 6 from the Bright Net
 * Yongran Mai
   * [Github](https://github.com/YoyoMai98)
 
+## **Table of Contents**
+* [Project Overview](#project-overview)
+* [This Website Features](#this-website-features)
+* [Setup and Instructions](#setup-and-instructions-for-using-the-project)
+* [Project Structure](#project-structure)
+* [Component Diagram](#component-diagram)
+* [Wireframes](#wireframes)
+* [Minimum Viable Product (MVP)](#mvp)
+* [Extensions](#extension)
+* [Further Implementations](#further-implementations--extensions)
+* [Acknowledgements](#acknowledgments)
+* [Default ReactJs Available Scripts](#default-reactjs-available-scripts)
+
 ## **Project Overview**
 As part of the Bright Network Technology Academy, we were assigned a group project to research, plan and develop a Frontend website based on a backend API that was developed by a different group on the course, in less than a week. As a group, we wanted to utilise all the functionality the API provided.
 
-### **This Website Features:**
+### **This Website Features**
 - Login functionality
 - Create users
 - Create recipes
+- Search a recipe
+- Display recipes with details
+- Add favourite recipes to users
 
-## **Setup and Instructions for using the Project:**
+## **Setup and Instructions for using the Project**
 1. Make sure that you have Java 17 installed to run the Recipe API
 2. Clone this repository by typing the following command into your terminal: ```git clone git@github.com:hanqing2001/API_group_project.git```
 3. Make a database titled "recipe_selector" using the following command: ```Createdb recipe_selector```
@@ -49,36 +51,44 @@ As part of the Bright Network Technology Academy, we were assigned a group proje
 5. Navigate to your web browser and if it has not already displayed, enter in the following URL:
 ```http://localhost:3000/```
 
-## **Project Structure:**
+## **Project Structure**
 This project is structured as below.
 
-### **Component Diagrams:**
+### **Component Diagram**
 ![Alt](/component_diagram.png "Component Diagram")
 
-### **Wireframes:**
+### **Wireframes**
+
+- Home page
 ![Alt](/wireframes/wireframe_p1.png "Wireframe 1")
+
+- Recipe list page
 ![Alt](/wireframes/wireframe_p2.png "Wireframe 2")
+
+- Recipe list page with a form to add new recipe
 ![Alt](/wireframes/wireframe_p3.png "Wireframe 3")
+
+- Single recipe page
 ![Alt](/wireframes/wireframe_p4.png "Wireframe 4")
+
+- Login page
 ![Alt](/wireframes/wireframe_p5.png "Wireframe 5")
+
+- Account page
 ![Alt](/wireframes/wireframe_p6.png "Wireframe 6")
 
-## **MVP:**
-For our MVP, we wanted to create a website with maximum   functionality which included:
+## **MVP**
+For our MVP, we wanted to create a website with maximum functionality which included:
 * Home page
 * Recipe list page
 * User Account page
 
-## **Extension:**
-For our extension, we wanted to:
+## **Extensions**
 * Allow a user to add a favourite recipe to their account and display it
 * Single Recipe page
+* Login functionality
 
-## **Testing:**
-We continuously tested our website as we were going along using
-```console.log()``` as well as other tests to ensure that our website was running correctly.
-
-## **Further Implementations & Extensions:**
+## **Further Implementations**
 Further functionalities we would like to develop into this website are:
 * Create a single ingredients card
 * Have an image slider for the home page
@@ -86,7 +96,7 @@ Further functionalities we would like to develop into this website are:
 * Add a rating for each recipe.
 
 ## **Acknowledgments:**
-A special thank you to Zsolt, Anna, Colin, Richard, Eoan and Phil, for all the advice and support during the project.
+A special thank you to [BNTA team](https://techacademy.brightnetwork.co.uk/) and especially to Anna, Colin, Eoan, Ed, Phil, Richard and Zsolt, for all the advice and support during the project.
 You've made this learning process a blast!
 
 ## Default ReactJs Available Scripts

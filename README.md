@@ -41,14 +41,33 @@ As part of the Bright Network Technology Academy, we were assigned a group proje
 - Add favourite recipes to users
 
 ## **Setup and Instructions for using the Project**
-1. Make sure that you have Java 17 installed to run the Recipe API
-2. Clone this repository by typing the following command into your terminal: ```git clone git@github.com:hanqing2001/API_group_project.git```
-3. Make a database titled "recipe_selector" using the following command: ```Createdb recipe_selector```
-4. Within IntelliJ run the programme
-5. Within your terminal navigate to the recipe_selectors folder and run the following two commands:
+
+1. Make sure that you have Java 17 and Node installed to run the Recipe API and React
+2. Clone [Recipe API](https://github.com/hanqing2001/API_group_project) by typing the following commands into your terminal: ```git clone git@github.com:hanqing2001/API_group_project.git``` 
+3. Clone this repository by typing the following commands into your terminal: ```git@github.com:YoyoMai98/recipe_front_end.git```
+4. Make a database titled "recipe_selector" using the following command: ```Createdb recipe_selector```
+5. Create a `configurations` folder with a `SpringGlobalConfig.java` file in your API `main` java folder:
+
+```
+@Configuration
+public class SpringGlobalConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("*")
+                .allowedHeaders("*")
+                .allowedMethods("*");
+    }
+
+}
+```
+
+5. Within IntelliJ run the programme
+6. Within your terminal navigate to the `recipe_selectors` folder and run the following two commands:
 ```npm install```
 ```npm start```
-5. Navigate to your web browser and if it has not already displayed, enter in the following URL:
+7. Navigate to your web browser and if it has not already displayed, enter in the following URL:
 ```http://localhost:3000/```
 
 ## **Project Structure**

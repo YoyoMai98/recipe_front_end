@@ -30,8 +30,9 @@
 }
 
 .favourite_button {
-    height: 2.3em;
-    width: 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-radius: 5px;
     color: #5a653d;
     background-color: transparent;
@@ -43,7 +44,20 @@
     color: #5a653d;
     font-size: 16px;
     font-weight: 500;
-    border: 0.1px solid #87805E;
+    margin-right: 10px;
+    font-weight: 550;
+    border: 0.1px solid transparent;
+    border-radius: 4px;
+    background-color: rgb(135, 128, 94, 0.4);
     cursor: pointer;
 }
-  
+
+.favourite_button button:hover {
+    box-shadow: 2px 2px #706a4a;
+}
+
+
+.favourite_button p {
+    font-size: 18px;
+    font-weight: 550;
+}

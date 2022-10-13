@@ -29,7 +29,7 @@ header {
 .logoText {
     margin: 0;
     margin-left: -10px;
-    width: 40%;
+    width: 47%;
 } 
 
 /* .logoText img {
@@ -84,4 +84,45 @@ header a {
     -o-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
   }
+
+@media screen and (max-width: 800px) {
+    .logoImage {
+        width: 20%;
+    }
+
+    .logoText {
+        width: 60%;
+        margin-left: -20px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .logoText {
+        margin-left: -10px;
+    }
+
+    #header_right_recipe {
+        font-size: 20px;
+        margin-right: 0;
+    }
+
+    #header_account {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .header_right {
+        align-items: center;
+    }
+
+    #header_right_recipe {
+        font-size: 15px;
+    }
+
+    #header_account {
+        font-size: 15px;
+        margin-left: -5px;
+    }
+}
 

@@ -67,3 +67,36 @@
 #registrationButton:hover {
     box-shadow: 2px 2px #c7bd88;
 }
+
+@media screen and (max-width: 800px) {
+    .footer_add_recipe h2 {
+        font-size: 20px;
+    }
+
+    .footer_add_recipe button {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .name_form label {
+        font-size: 15px;
+    }
+
+    #name {
+        width: 200px;
+    }
+
+    #registrationButton {
+        font-size: 13px;
+        padding: 5px;
+    }
+
+    .footer_add_recipe h2 {
+        font-size: 15px;
+    }
+
+    .footer_add_recipe button {
+        font-size: 10px;
+    }
+}

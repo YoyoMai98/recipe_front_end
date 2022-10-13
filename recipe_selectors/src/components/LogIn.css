@@ -76,3 +76,41 @@
 #log-in-register-btn{
   margin-bottom: 20px;
 }
+
+@media screen and (max-width: 800px) {
+  .form-container h3 {
+    font-size: 20px;
+  }
+
+  #log-in-select {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  #log-in-btn {
+    font-size: 15px;
+  }
+
+  #log-in-register-btn {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .form-container h3 {
+    font-size: 15px;
+  }
+
+  #log-in-select {
+    font-size: 10px;
+    padding: 6px;
+  }
+
+  #log-in-btn {
+    font-size: 10px;
+  }
+
+  #log-in-register-btn {
+    font-size: 10px;
+  }
+}

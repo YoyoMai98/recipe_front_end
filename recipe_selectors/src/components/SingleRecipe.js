@@ -34,10 +34,10 @@ const SingleRecipe = ({user, loggedInUser, addFaveRecipe, postUser}) => {
             setClassName("display")
             return
         }
-        setFaveRecipe(recipe)
         if(user.favRecipes.find(recipe => recipe.id === parseInt(recipeId))){
             setFaveRecipe()
         }else{
+            setFaveRecipe(recipe)
             addFaveRecipe(parseInt(recipeId), user)
         }
     }
@@ -76,6 +76,7 @@ const SingleRecipe = ({user, loggedInUser, addFaveRecipe, postUser}) => {
                         <Link to='/account'>
                         <p className={className}>Please Log In</p>
                         </Link>
+                       {faveRecipe !== undefined || user.favRecipes.find(recipe => recipe.id === parseInt(recipeId)) ?  <p className="display">Added!</p> : <p className="hidden"></p>}
                      </div>
                 </div> 
             </div>

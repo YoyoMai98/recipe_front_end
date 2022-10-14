@@ -76,7 +76,7 @@ const SingleRecipe = ({user, loggedInUser, addFaveRecipe, postUser}) => {
                         <Link to='/account'>
                         <p className={className}>Please Log In</p>
                         </Link>
-                       {faveRecipe !== undefined || user.favRecipes.find(recipe => recipe.id === parseInt(recipeId)) ?  <p className="display">Added!</p> : <p className="hidden"></p>}
+                       {faveRecipe !== undefined || (user !== undefined && user.favRecipes.find(recipe => recipe.id === parseInt(recipeId))) ?  <p className="display">Added!</p> : <p className="hidden"></p>}
                      </div>
                 </div> 
             </div>

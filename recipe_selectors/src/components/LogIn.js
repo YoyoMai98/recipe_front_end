@@ -23,6 +23,7 @@ const LogIn = ({users,loggedInUser, postUser}) => {
 
     const handleFormSubmit = event => {
         event.preventDefault();
+        if(chosenUser.name === "") return
         loggedInUser(chosenUser)
 
        setChosenUser({

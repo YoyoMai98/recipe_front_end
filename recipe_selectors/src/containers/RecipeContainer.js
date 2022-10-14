@@ -3,11 +3,14 @@ import RecipeList from "../components/RecipeList";
 import AddNewRecipeForm from "../components/AddNewRecipeForm";
 import Search from "../components/Search";
 import Footer from "../components/Footer"
+import { useNavigate } from "react-router-dom";
 
 
 const access_key = "mEi0nGTNsKAjv7GHdhxfSw_aZfkwEES1J1I-NApn6OY"
 
 const RecipeContainer = ({recipes, setRecipes, filterRecipe, filteredRecipes, postUser, searchTerm, setSearchTerm}) => {
+
+const navigate = useNavigate()
 
     const [ingredients, setIngredients] = useState([])
     const [clicked, setClicked] = useState(false)
@@ -60,6 +63,7 @@ const RecipeContainer = ({recipes, setRecipes, filterRecipe, filteredRecipes, po
         })
         const savedRecipe =  await response.json()
         setRecipes([...recipes, savedRecipe])
+        navigate("/recipes")
     }
 
     return (

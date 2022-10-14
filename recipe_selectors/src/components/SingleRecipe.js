@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import Footer from "./Footer"
 import "./SingleRecipe.css"
 
@@ -73,7 +73,9 @@ const SingleRecipe = ({user, loggedInUser, addFaveRecipe, postUser}) => {
                     <p>Vegetarian: {recipe.vegetarian ? "Yes" : "No"}</p>
                     <div className = "favourite_button">
                         <button onClick={handleClick}>Add to Favourites &#9829; </button>
+                        <Link to='/account'>
                         <p className={className}>Please Log In</p>
+                        </Link>
                      </div>
                 </div> 
             </div>
